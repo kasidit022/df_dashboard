@@ -527,15 +527,21 @@ DF
 <input type="text" class="form-input" id="inv-name" placeholder="BTC / NVIDIA" autocomplete="off">
 </div>
 </div>
-<div class="form-row">
+<div class="off-toggle" id="track-only-toggle" onclick="toggleTrackOnly()">
+<div>
+<div class="off-toggle-label">📊 Track มูลค่าอย่างเดียว</div>
+<div class="off-toggle-desc">เปิด = ไม่ทราบทุน (เช่น BTC ใน Hardware Wallet) นับเฉพาะมูลค่าปัจจุบัน</div>
+</div>
+<div class="toggle-dot"></div>
+</div>
 <div class="form-group">
 <label class="form-label">จำนวน (Qty)</label>
 <input type="number" class="form-input" id="inv-qty" placeholder="0" step="any" inputmode="decimal">
 </div>
+<div id="inv-cost-fields">
 <div class="form-group">
 <label class="form-label" id="inv-price-label">ราคาทุนเฉลี่ย (THB)</label>
 <input type="number" class="form-input" id="inv-price" placeholder="0.00" step="any" inputmode="decimal">
-</div>
 </div>
 <div class="form-group">
 <label class="form-label">สกุลของราคาทุน</label>
@@ -543,6 +549,7 @@ DF
 <option value="THB">THB (บาท)</option>
 <option value="USD">USD (ดอลลาร์)</option>
 </select>
+</div>
 </div>
 <div class="form-group">
 <label class="form-label">หมายเหตุ (ไม่บังคับ)</label>
@@ -587,7 +594,7 @@ function downloadSelf(){
   }
 }
 
-const SEED = {"dfData":{"Apr 25":[{"d":10,"b":"ชุมพร","v":11127.72},{"d":11,"b":"สุราษ","v":30945.4},{"d":12,"b":"สุราษ","v":5066},{"d":17,"b":"ชุมพร","v":21898.88},{"d":18,"b":"นครปฐม","v":16278.12},{"d":19,"b":"พระราม9","v":6209.8},{"d":20,"b":"โคราช","v":16860.08},{"d":21,"b":"นครศรี","v":36683.44},{"d":22,"b":"ตรัง","v":16956.76},{"d":23,"b":"ลาดกระบัง","v":9541.8},{"d":25,"b":"เชียงใหม่","v":36034.4},{"d":26,"b":"ลำปาง","v":26762.84},{"d":27,"b":"นครศรี","v":30777},{"d":28,"b":"นครศรี","v":null},{"d":29,"b":"สุราษ","v":43242.52},{"d":30,"b":"ชุมพร","v":24934.96}],"May 25":[{"d":1,"b":"ชุมพร","v":null},{"d":3,"b":"ศรีราชา","v":13397.8},{"d":4,"b":"บางบัวทอง","v":11993},{"d":5,"b":"รังสิต","v":null},{"d":6,"b":"อยุธยา","v":18073},{"d":9,"b":"นครปฐม","v":21879.76},{"d":10,"b":"ศรีราชา","v":null},{"d":11,"b":"พระราม9","v":15372},{"d":12,"b":"นครศรี","v":35000},{"d":16,"b":"นครปฐม","v":11811},{"d":17,"b":"อ้อมน้อย","v":9420},{"d":24,"b":"อมตะ","v":8492},{"d":25,"b":"นครศรี","v":null},{"d":26,"b":"พระราม9","v":8618},{"d":28,"b":"ชุมพร","v":null},{"d":29,"b":"นครศรี","v":14019},{"d":30,"b":"มหาชัย","v":null},{"d":31,"b":"อ้อมน้อย","v":35548}],"Jun 25":[{"d":4,"b":"ชุมพร","v":36350},{"d":5,"b":"ชุมพร","v":10815},{"d":6,"b":"สุราษ","v":25290},{"d":7,"b":"สุราษ","v":19387},{"d":8,"b":"นครศรี","v":21062},{"d":9,"b":"ตรัง","v":28261},{"d":14,"b":"พระราม9","v":14089},{"d":15,"b":"บ่อวิน","v":23306},{"d":17,"b":"ศรีราชา","v":18078},{"d":18,"b":"ลาดกระบัง","v":13526},{"d":20,"b":"กาญจนบุรี","v":8209},{"d":21,"b":"ระยอง","v":5000},{"d":27,"b":"ปราจีน","v":12000},{"d":28,"b":"อมตะ","v":19000},{"d":29,"b":"กระบี่","v":null},{"d":30,"b":"นครศรี","v":39000}],"Jul 25":[{"d":1,"b":"นครศรี","v":null},{"d":2,"b":"นครปฐม","v":12307.68},{"d":9,"b":"โคราช","v":null},{"d":10,"b":"ปราจีน","v":35600.24},{"d":12,"b":"ภูเก็ต","v":27799.6},{"d":13,"b":"รังสิต","v":null},{"d":14,"b":"อ้อมน้อย","v":10059.2},{"d":15,"b":"รังสิต","v":22452.28},{"d":18,"b":"สุราษ","v":53743.88},{"d":19,"b":"สุราษ","v":20032.74},{"d":20,"b":"นครศรี","v":31482.24},{"d":21,"b":"นครศรี","v":23970},{"d":23,"b":"ชุมพร","v":null},{"d":24,"b":"ชุมพร","v":31809},{"d":26,"b":"บางบัวทอง","v":null},{"d":27,"b":"นครศรี","v":7040},{"d":31,"b":"นครศรี","v":45000}],"Aug 25":[{"d":1,"b":"อ้อมน้อย","v":17999},{"d":2,"b":"รามคำแหง","v":4731},{"d":3,"b":"พระราม9","v":8652},{"d":4,"b":"นครศรี","v":null},{"d":6,"b":"เชียงใหม่","v":21855},{"d":12,"b":"ศรีราชา","v":9771},{"d":15,"b":"รามคำแหง","v":9623},{"d":16,"b":"รังสิต","v":8603},{"d":17,"b":"อมตะ","v":21817},{"d":20,"b":"ชุมพร","v":null},{"d":21,"b":"ชุมพร","v":21400},{"d":22,"b":"สุราษ","v":30352},{"d":23,"b":"สุราษ","v":16977},{"d":24,"b":"นครศรี","v":39691},{"d":25,"b":"ตรัง","v":17796},{"d":29,"b":"อ้อมน้อย","v":16800},{"d":30,"b":"สมุทร","v":20618},{"d":31,"b":"นครศรี","v":31020}],"Sep 25":[{"d":12,"b":"รังสิต","v":13501},{"d":14,"b":"ศรีราชา","v":16145},{"d":16,"b":"krm","v":null},{"d":17,"b":"ชุมพร","v":37522},{"d":18,"b":"ชุมพร","v":null},{"d":20,"b":"อมตะ","v":8006},{"d":21,"b":"krm","v":null},{"d":22,"b":"สมุทรปราการ","v":6598},{"d":26,"b":"กระบี่","v":34914},{"d":27,"b":"kr plus","v":null},{"d":28,"b":"krm","v":null},{"d":29,"b":"นครศรี","v":null},{"d":30,"b":"ชุมพร","v":27447}],"Oct 25":[{"d":2,"b":"บางนา","v":null},{"d":3,"b":"สุราษ","v":43777},{"d":4,"b":"สุราษ","v":18359},{"d":5,"b":"เพชรบุรี","v":24098},{"d":10,"b":"สมุทรปราการ","v":26227},{"d":12,"b":"นครศรี","v":28229},{"d":15,"b":"ชุมพร","v":32100},{"d":16,"b":"ชุมพร","v":5830},{"d":18,"b":"ลาดกระบัง","v":18282},{"d":19,"b":"krm","v":null},{"d":23,"b":"อมตะ","v":16583},{"d":25,"b":"กระบี่","v":18878},{"d":26,"b":"นครศรี","v":13405},{"d":28,"b":"krm","v":null},{"d":29,"b":"พระราม9","v":9900},{"d":30,"b":"รังสิต","v":8800},{"d":31,"b":"นครศรี","v":12000}],"Nov 25":[{"d":3,"b":"บางบัวทอง","v":12387.6},{"d":4,"b":"ลาดกระบัง","v":8779.4},{"d":5,"b":"ชุมพร","v":null},{"d":6,"b":"ชุมพร","v":35053.04},{"d":7,"b":"สุราษ","v":32018.44},{"d":10,"b":"อ้อมน้อย","v":9331.07},{"d":11,"b":"ลาดกระบัง","v":9769.2},{"d":12,"b":"รังสิต","v":4407.36},{"d":18,"b":"ชุมพร","v":null},{"d":19,"b":"ชุมพร","v":30100.04},{"d":21,"b":"ปิ่นเกล้า","v":null},{"d":22,"b":"อยุธยา","v":null},{"d":23,"b":"นครศรี","v":null},{"d":25,"b":"นครปฐม","v":15005.92},{"d":29,"b":"krm","v":34007.84}],"Dec 25":[{"d":3,"b":"ชุมพร","v":null},{"d":4,"b":"ชุมพร","v":39019.28},{"d":5,"b":"สุราษ","v":44786.12},{"d":6,"b":"สุราษ","v":19374.4},{"d":7,"b":"นครศรี","v":23014.8},{"d":11,"b":"ลาดกระบัง","v":25348.8},{"d":12,"b":"krm","v":null},{"d":13,"b":"krm","v":null},{"d":19,"b":"รังสิต","v":13008},{"d":20,"b":"บางนา","v":15100},{"d":21,"b":"บ่อวิน","v":67556.8},{"d":22,"b":"นครศรี","v":19379},{"d":24,"b":"เชียงใหม่","v":42198},{"d":25,"b":"อยุธยา","v":17349},{"d":26,"b":"กาญจนบุรี","v":40068},{"d":27,"b":"อ้อมน้อย","v":31889},{"d":28,"b":"มหาชัย","v":34865},{"d":29,"b":"อยุธยา","v":55060}],"Jan 26":[{"d":4,"b":"บางบัวทอง","v":null},{"d":5,"b":"นครศรี","v":12673.93},{"d":7,"b":"ระยอง","v":20302},{"d":11,"b":"อยุธยา","v":32521},{"d":13,"b":"ชุมพร","v":null},{"d":14,"b":"ชุมพร","v":25847},{"d":15,"b":"สุราษ","v":21869},{"d":16,"b":"สุราษ","v":47844},{"d":17,"b":"ระยอง","v":null},{"d":18,"b":"รังสิต","v":10287},{"d":19,"b":"ปิ่นเกล้า","v":13892},{"d":29,"b":"อยุธยา","v":null},{"d":30,"b":"พระราม9","v":3130},{"d":31,"b":"ศรีราชา","v":36813}],"Feb 26":[{"d":2,"b":"อยุธยา","v":9859},{"d":3,"b":"ตรัง","v":null},{"d":5,"b":"พระราม9","v":10685},{"d":7,"b":"ระยอง","v":41608},{"d":8,"b":"อมตะ","v":31715},{"d":11,"b":"มหาชัย","v":20591},{"d":12,"b":"ปิ่นเกล้า","v":11395},{"d":13,"b":"ศรีราชา","v":21859},{"d":14,"b":"นครปฐม","v":5622},{"d":15,"b":"อมตะ","v":8036},{"d":16,"b":"บางบัวทอง","v":null},{"d":17,"b":"ชุมพร","v":null},{"d":18,"b":"ชุมพร","v":39283},{"d":22,"b":"นครศรี","v":32242},{"d":24,"b":"อยุธยา","v":24159},{"d":25,"b":"ลาดกระบัง","v":12695},{"d":28,"b":"ฉะเชิงเทรา","v":23873}],"Mar 26":[{"d":6,"b":"สุราษ","v":49883},{"d":7,"b":"สุราษ","v":37184},{"d":8,"b":"นครศรี","v":44971},{"d":9,"b":"บางบัวทอง","v":16650},{"d":10,"b":"อยุธยา","v":9691},{"d":11,"b":"พระราม9","v":null},{"d":12,"b":"ปิ่นเกล้า","v":31994},{"d":16,"b":"นครศรี","v":null},{"d":18,"b":"เชียงใหม่","v":28460},{"d":19,"b":"ปราจีน","v":39835},{"d":21,"b":"ศรีราชา","v":17619},{"d":22,"b":"สุราษ","v":34912},{"d":23,"b":"นครศรี","v":34379},{"d":27,"b":"ลาดกระบัง","v":19708},{"d":28,"b":"สุราษ","v":null},{"d":29,"b":"ฉะเชิงเทรา","v":22428},{"d":31,"b":"อ้อมน้อย","v":10666}],"Apr 26":[{"d":4,"b":"กาญจนบุรี","v":8587},{"d":5,"b":"มหาชัย","v":35249},{"d":6,"b":"นครศรี","v":25489},{"d":7,"b":"สุราษ","v":33848},{"d":8,"b":"อยุธยา","v":null},{"d":9,"b":"ลาดกระบัง","v":18659},{"d":10,"b":"กระบี่","v":null},{"d":11,"b":"ระยอง","v":29690},{"d":18,"b":"ศรีราชา","v":25146},{"d":19,"b":"บ่อวิน","v":18043},{"d":20,"b":"นครศรี","v":37200},{"d":22,"b":"นครปฐม","v":23690},{"d":23,"b":"ศรีราชา","v":9311}]},"expData":{},"investData":[{"id":"inv1","type":"crypto","symbol":"bitcoin","name":"BTC","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv2","type":"gold","symbol":"tether-gold","name":"Gold (XAUT)","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv3","type":"stock_us","symbol":"NVDA","name":"NVIDIA","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv4","type":"stock_us","symbol":"TSM","name":"TSMC","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv5","type":"stock_us","symbol":"AAPL","name":"Apple","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv6","type":"stock_us","symbol":"MSFT","name":"Microsoft","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv7","type":"stock_th","symbol":"TISCO.BK","name":"TISCO","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv8","type":"stock_th","symbol":"SCB.BK","name":"SCB","qty":0,"avgPrice":0,"currency":"THB","note":""}],"priceCache":{},"usdThbRate":36};
+const SEED = {"dfData":{"Apr 25":[{"d":10,"b":"ชุมพร","v":11127.72},{"d":11,"b":"สุราษ","v":30945.4},{"d":12,"b":"สุราษ","v":5066},{"d":17,"b":"ชุมพร","v":21898.88},{"d":18,"b":"นครปฐม","v":16278.12},{"d":19,"b":"พระราม9","v":6209.8},{"d":20,"b":"โคราช","v":16860.08},{"d":21,"b":"นครศรี","v":36683.44},{"d":22,"b":"ตรัง","v":16956.76},{"d":23,"b":"ลาดกระบัง","v":9541.8},{"d":25,"b":"เชียงใหม่","v":36034.4},{"d":26,"b":"ลำปาง","v":26762.84},{"d":27,"b":"นครศรี","v":30777},{"d":28,"b":"นครศรี","v":null},{"d":29,"b":"สุราษ","v":43242.52},{"d":30,"b":"ชุมพร","v":24934.96}],"May 25":[{"d":1,"b":"ชุมพร","v":null},{"d":3,"b":"ศรีราชา","v":13397.8},{"d":4,"b":"บางบัวทอง","v":11993},{"d":5,"b":"รังสิต","v":null},{"d":6,"b":"อยุธยา","v":18073},{"d":9,"b":"นครปฐม","v":21879.76},{"d":10,"b":"ศรีราชา","v":null},{"d":11,"b":"พระราม9","v":15372},{"d":12,"b":"นครศรี","v":35000},{"d":16,"b":"นครปฐม","v":11811},{"d":17,"b":"อ้อมน้อย","v":9420},{"d":24,"b":"อมตะ","v":8492},{"d":25,"b":"นครศรี","v":null},{"d":26,"b":"พระราม9","v":8618},{"d":28,"b":"ชุมพร","v":null},{"d":29,"b":"นครศรี","v":14019},{"d":30,"b":"มหาชัย","v":null},{"d":31,"b":"อ้อมน้อย","v":35548}],"Jun 25":[{"d":4,"b":"ชุมพร","v":36350},{"d":5,"b":"ชุมพร","v":10815},{"d":6,"b":"สุราษ","v":25290},{"d":7,"b":"สุราษ","v":19387},{"d":8,"b":"นครศรี","v":21062},{"d":9,"b":"ตรัง","v":28261},{"d":14,"b":"พระราม9","v":14089},{"d":15,"b":"บ่อวิน","v":23306},{"d":17,"b":"ศรีราชา","v":18078},{"d":18,"b":"ลาดกระบัง","v":13526},{"d":20,"b":"กาญจนบุรี","v":8209},{"d":21,"b":"ระยอง","v":5000},{"d":27,"b":"ปราจีน","v":12000},{"d":28,"b":"อมตะ","v":19000},{"d":29,"b":"กระบี่","v":null},{"d":30,"b":"นครศรี","v":39000}],"Jul 25":[{"d":1,"b":"นครศรี","v":null},{"d":2,"b":"นครปฐม","v":12307.68},{"d":9,"b":"โคราช","v":null},{"d":10,"b":"ปราจีน","v":35600.24},{"d":12,"b":"ภูเก็ต","v":27799.6},{"d":13,"b":"รังสิต","v":null},{"d":14,"b":"อ้อมน้อย","v":10059.2},{"d":15,"b":"รังสิต","v":22452.28},{"d":18,"b":"สุราษ","v":53743.88},{"d":19,"b":"สุราษ","v":20032.74},{"d":20,"b":"นครศรี","v":31482.24},{"d":21,"b":"นครศรี","v":23970},{"d":23,"b":"ชุมพร","v":null},{"d":24,"b":"ชุมพร","v":31809},{"d":26,"b":"บางบัวทอง","v":null},{"d":27,"b":"นครศรี","v":7040},{"d":31,"b":"นครศรี","v":45000}],"Aug 25":[{"d":1,"b":"อ้อมน้อย","v":17999},{"d":2,"b":"รามคำแหง","v":4731},{"d":3,"b":"พระราม9","v":8652},{"d":4,"b":"นครศรี","v":null},{"d":6,"b":"เชียงใหม่","v":21855},{"d":12,"b":"ศรีราชา","v":9771},{"d":15,"b":"รามคำแหง","v":9623},{"d":16,"b":"รังสิต","v":8603},{"d":17,"b":"อมตะ","v":21817},{"d":20,"b":"ชุมพร","v":null},{"d":21,"b":"ชุมพร","v":21400},{"d":22,"b":"สุราษ","v":30352},{"d":23,"b":"สุราษ","v":16977},{"d":24,"b":"นครศรี","v":39691},{"d":25,"b":"ตรัง","v":17796},{"d":29,"b":"อ้อมน้อย","v":16800},{"d":30,"b":"สมุทร","v":20618},{"d":31,"b":"นครศรี","v":31020}],"Sep 25":[{"d":12,"b":"รังสิต","v":13501},{"d":14,"b":"ศรีราชา","v":16145},{"d":16,"b":"krm","v":null},{"d":17,"b":"ชุมพร","v":37522},{"d":18,"b":"ชุมพร","v":null},{"d":20,"b":"อมตะ","v":8006},{"d":21,"b":"krm","v":null},{"d":22,"b":"สมุทรปราการ","v":6598},{"d":26,"b":"กระบี่","v":34914},{"d":27,"b":"kr plus","v":null},{"d":28,"b":"krm","v":null},{"d":29,"b":"นครศรี","v":null},{"d":30,"b":"ชุมพร","v":27447}],"Oct 25":[{"d":2,"b":"บางนา","v":null},{"d":3,"b":"สุราษ","v":43777},{"d":4,"b":"สุราษ","v":18359},{"d":5,"b":"เพชรบุรี","v":24098},{"d":10,"b":"สมุทรปราการ","v":26227},{"d":12,"b":"นครศรี","v":28229},{"d":15,"b":"ชุมพร","v":32100},{"d":16,"b":"ชุมพร","v":5830},{"d":18,"b":"ลาดกระบัง","v":18282},{"d":19,"b":"krm","v":null},{"d":23,"b":"อมตะ","v":16583},{"d":25,"b":"กระบี่","v":18878},{"d":26,"b":"นครศรี","v":13405},{"d":28,"b":"krm","v":null},{"d":29,"b":"พระราม9","v":9900},{"d":30,"b":"รังสิต","v":8800},{"d":31,"b":"นครศรี","v":12000}],"Nov 25":[{"d":3,"b":"บางบัวทอง","v":12387.6},{"d":4,"b":"ลาดกระบัง","v":8779.4},{"d":5,"b":"ชุมพร","v":null},{"d":6,"b":"ชุมพร","v":35053.04},{"d":7,"b":"สุราษ","v":32018.44},{"d":10,"b":"อ้อมน้อย","v":9331.07},{"d":11,"b":"ลาดกระบัง","v":9769.2},{"d":12,"b":"รังสิต","v":4407.36},{"d":18,"b":"ชุมพร","v":null},{"d":19,"b":"ชุมพร","v":30100.04},{"d":21,"b":"ปิ่นเกล้า","v":null},{"d":22,"b":"อยุธยา","v":null},{"d":23,"b":"นครศรี","v":null},{"d":25,"b":"นครปฐม","v":15005.92},{"d":29,"b":"krm","v":34007.84}],"Dec 25":[{"d":3,"b":"ชุมพร","v":null},{"d":4,"b":"ชุมพร","v":39019.28},{"d":5,"b":"สุราษ","v":44786.12},{"d":6,"b":"สุราษ","v":19374.4},{"d":7,"b":"นครศรี","v":23014.8},{"d":11,"b":"ลาดกระบัง","v":25348.8},{"d":12,"b":"krm","v":null},{"d":13,"b":"krm","v":null},{"d":19,"b":"รังสิต","v":13008},{"d":20,"b":"บางนา","v":15100},{"d":21,"b":"บ่อวิน","v":67556.8},{"d":22,"b":"นครศรี","v":19379},{"d":24,"b":"เชียงใหม่","v":42198},{"d":25,"b":"อยุธยา","v":17349},{"d":26,"b":"กาญจนบุรี","v":40068},{"d":27,"b":"อ้อมน้อย","v":31889},{"d":28,"b":"มหาชัย","v":34865},{"d":29,"b":"อยุธยา","v":55060}],"Jan 26":[{"d":4,"b":"บางบัวทอง","v":null},{"d":5,"b":"นครศรี","v":12673.93},{"d":7,"b":"ระยอง","v":20302},{"d":11,"b":"อยุธยา","v":32521},{"d":13,"b":"ชุมพร","v":null},{"d":14,"b":"ชุมพร","v":25847},{"d":15,"b":"สุราษ","v":21869},{"d":16,"b":"สุราษ","v":47844},{"d":17,"b":"ระยอง","v":null},{"d":18,"b":"รังสิต","v":10287},{"d":19,"b":"ปิ่นเกล้า","v":13892},{"d":29,"b":"อยุธยา","v":null},{"d":30,"b":"พระราม9","v":3130},{"d":31,"b":"ศรีราชา","v":36813}],"Feb 26":[{"d":2,"b":"อยุธยา","v":9859},{"d":3,"b":"ตรัง","v":null},{"d":5,"b":"พระราม9","v":10685},{"d":7,"b":"ระยอง","v":41608},{"d":8,"b":"อมตะ","v":31715},{"d":11,"b":"มหาชัย","v":20591},{"d":12,"b":"ปิ่นเกล้า","v":11395},{"d":13,"b":"ศรีราชา","v":21859},{"d":14,"b":"นครปฐม","v":5622},{"d":15,"b":"อมตะ","v":8036},{"d":16,"b":"บางบัวทอง","v":null},{"d":17,"b":"ชุมพร","v":null},{"d":18,"b":"ชุมพร","v":39283},{"d":22,"b":"นครศรี","v":32242},{"d":24,"b":"อยุธยา","v":24159},{"d":25,"b":"ลาดกระบัง","v":12695},{"d":28,"b":"ฉะเชิงเทรา","v":23873}],"Mar 26":[{"d":6,"b":"สุราษ","v":49883},{"d":7,"b":"สุราษ","v":37184},{"d":8,"b":"นครศรี","v":44971},{"d":9,"b":"บางบัวทอง","v":16650},{"d":10,"b":"อยุธยา","v":9691},{"d":11,"b":"พระราม9","v":null},{"d":12,"b":"ปิ่นเกล้า","v":31994},{"d":16,"b":"นครศรี","v":null},{"d":18,"b":"เชียงใหม่","v":28460},{"d":19,"b":"ปราจีน","v":39835},{"d":21,"b":"ศรีราชา","v":17619},{"d":22,"b":"สุราษ","v":34912},{"d":23,"b":"นครศรี","v":34379},{"d":27,"b":"ลาดกระบัง","v":19708},{"d":28,"b":"สุราษ","v":null},{"d":29,"b":"ฉะเชิงเทรา","v":22428},{"d":31,"b":"อ้อมน้อย","v":10666}],"Apr 26":[{"d":4,"b":"กาญจนบุรี","v":8587},{"d":5,"b":"มหาชัย","v":35249},{"d":6,"b":"นครศรี","v":25489},{"d":7,"b":"สุราษ","v":33848},{"d":8,"b":"อยุธยา","v":null},{"d":9,"b":"ลาดกระบัง","v":18659},{"d":10,"b":"กระบี่","v":null},{"d":11,"b":"ระยอง","v":29690},{"d":18,"b":"ศรีราชา","v":25146},{"d":19,"b":"บ่อวิน","v":18043},{"d":20,"b":"นครศรี","v":37200},{"d":22,"b":"นครปฐม","v":23690},{"d":23,"b":"ศรีราชา","v":9311}]},"expData":{},"investData":[{"id":"inv1","type":"crypto","symbol":"bitcoin","name":"BTC","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv2","type":"gold","symbol":"tether-gold","name":"Gold (XAUT)","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv3","type":"stock_us","symbol":"NVDA","name":"NVIDIA","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv4","type":"stock_us","symbol":"TSM","name":"TSMC","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv5","type":"stock_us","symbol":"AAPL","name":"Apple","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv6","type":"stock_us","symbol":"MSFT","name":"Microsoft","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv9","type":"stock_us","symbol":"VOO","name":"S&P 500 (VOO)","qty":0,"avgPrice":0,"currency":"USD","note":"Vanguard S&P 500 ETF"},{"id":"inv7","type":"stock_th","symbol":"TISCO.BK","name":"TISCO","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv8","type":"stock_th","symbol":"SCB.BK","name":"SCB","qty":0,"avgPrice":0,"currency":"THB","note":""}],"priceCache":{},"usdThbRate":36};
 
 const MONTHS = ['Apr 25','May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26'];
 const KEY = 'df_dash_v3';
@@ -608,6 +615,14 @@ function loadData(){
     if(!data.investData) data.investData = deepClone(SEED.investData||[]);
     if(!data.priceCache) data.priceCache = {};
     if(!data.usdThbRate) data.usdThbRate = 36;
+    // Migration: add new SEED holdings that don't exist yet (e.g. VOO/S&P 500)
+    if(!data.seedV2){
+      const have = new Set(data.investData.map(h=>h.symbol));
+      (SEED.investData||[]).forEach(s=>{
+        if(!have.has(s.symbol)) data.investData.push(deepClone(s));
+      });
+      data.seedV2 = true;
+    }
   }catch(e){ data = deepClone(SEED); }
 }
 function saveData(){
@@ -1111,6 +1126,20 @@ document.querySelectorAll('.modal-overlay').forEach(o=>{
 // INVESTMENT
 // ============================================================
 let editInvIdx = null;
+let isTrackOnly = false;
+
+function toggleTrackOnly(){
+  isTrackOnly = !isTrackOnly;
+  setTrackOnlyUI(isTrackOnly);
+}
+function setTrackOnlyUI(on){
+  isTrackOnly = on;
+  document.getElementById('track-only-toggle').classList.toggle('active', on);
+  document.getElementById('inv-cost-fields').style.display = on ? 'none' : 'block';
+  if(on){
+    document.getElementById('inv-price').value = '';
+  }
+}
 
 function fmtNum(v){
   if(v==null||isNaN(v)) return '—';
@@ -1136,20 +1165,26 @@ function renderInvestTab(){
   const items = holdings.map(h => {
     const c = cache[h.symbol];
     const buyCur = h.currency || 'THB';
-    let costThb = (h.qty||0) * (h.avgPrice||0);
-    if(buyCur === 'USD') costThb *= usdThbRate;
+    const trackOnly = !!h.trackOnly;
+    let costThb = trackOnly ? 0 : (h.qty||0) * (h.avgPrice||0);
+    if(!trackOnly && buyCur === 'USD') costThb *= usdThbRate;
     let currentThb = null;
     if(c && c.thb != null) currentThb = c.thb;
     const valueThb = currentThb !== null ? (h.qty||0) * currentThb : null;
-    const pl = valueThb !== null ? valueThb - costThb : null;
-    const plPct = costThb > 0 && pl !== null ? (pl/costThb*100) : null;
-    return {...h, costThb, currentThb, valueThb, pl, plPct, hasPrice: !!c, t: c?c.t:0};
+    const pl = (trackOnly || valueThb===null) ? null : valueThb - costThb;
+    const plPct = (!trackOnly && costThb > 0 && pl !== null) ? (pl/costThb*100) : null;
+    return {...h, trackOnly, costThb, currentThb, valueThb, pl, plPct, hasPrice: !!c, t: c?c.t:0};
   });
 
-  const totalCost = items.reduce((s,i)=>s+(i.costThb||0),0);
+  // Total value = all items (including trackOnly)
   const totalValue = items.reduce((s,i)=>s+(i.valueThb||0),0);
-  const totalPL = totalValue - totalCost;
+  // Cost & P/L only from items with cost basis
+  const trackedItems = items.filter(i=>!i.trackOnly && i.qty>0);
+  const totalCost = trackedItems.reduce((s,i)=>s+(i.costThb||0),0);
+  const trackedValue = trackedItems.reduce((s,i)=>s+(i.valueThb||0),0);
+  const totalPL = trackedValue - totalCost;
   const totalPLPct = totalCost > 0 ? totalPL/totalCost*100 : 0;
+  const trackOnlyValue = items.filter(i=>i.trackOnly).reduce((s,i)=>s+(i.valueThb||0),0);
   const times = items.filter(i=>i.t).map(i=>i.t);
   const lastUpdate = times.length ? Math.max(...times) : 0;
 
@@ -1171,6 +1206,9 @@ function renderInvestTab(){
             ${totalPL>=0?'+':'-'}฿${fmtK(Math.abs(totalPL))} (${totalPL>=0?'+':''}${totalPLPct.toFixed(2)}%)
           </span>
         </div>
+        ${trackOnlyValue > 0 ? `<div style="margin-top:6px;padding-top:6px;border-top:1px dashed var(--border);font-size:11px;color:var(--text-muted)">
+          📊 Track-only ฿${fmtK(trackOnlyValue)} (ไม่นับ P/L)
+        </div>` : ''}
       </div>
       <div class="inv-summary-card">
         <div class="stat-label">USD / THB</div>
@@ -1199,21 +1237,24 @@ function renderInvestTab(){
       const sign = it.pl>0 ? '+' : (it.pl<0 ? '-' : '');
       const typeLabel = {crypto:'Crypto',gold:'Gold',stock_us:'US Stock',stock_th:'TH Stock'}[it.type]||'Other';
       const iconText = (it.name||it.symbol).slice(0,3).toUpperCase();
+      const subParts = [typeLabel, it.symbol];
+      if(it.trackOnly) subParts.push('📊 Track-only');
+      if(!it.hasPrice) subParts.push('⚠ ไม่มีราคา');
       html += `<div class="inv-item" onclick="openInvestModal(${it._idx})" ${it.qty===0?'style="opacity:0.55"':''}>
         <div class="inv-row1">
           <div class="inv-icon ${it.type}">${iconText}</div>
           <div class="inv-name">
             <div class="inv-name-main">${it.name||it.symbol}</div>
-            <div class="inv-name-sub">${typeLabel} · ${it.symbol}${!it.hasPrice?' · ⚠ ไม่มีราคา':''}</div>
+            <div class="inv-name-sub">${subParts.join(' · ')}</div>
           </div>
-          <div class="inv-pl ${cls}">
-            <div class="inv-pl-amt">${it.pl!==null?sign+'฿'+fmtK(Math.abs(it.pl)):'—'}</div>
-            <div class="inv-pl-pct">${it.plPct!==null?(it.plPct>0?'+':'')+it.plPct.toFixed(2)+'%':'—'}</div>
+          <div class="inv-pl ${it.trackOnly?'flat':cls}">
+            <div class="inv-pl-amt">${it.trackOnly ? (it.valueThb!==null?'฿'+fmtK(it.valueThb):'—') : (it.pl!==null?sign+'฿'+fmtK(Math.abs(it.pl)):'—')}</div>
+            <div class="inv-pl-pct">${it.trackOnly ? 'มูลค่า' : (it.plPct!==null?(it.plPct>0?'+':'')+it.plPct.toFixed(2)+'%':'—')}</div>
           </div>
         </div>
         <div class="inv-row2">
           <span>Qty <b>${fmtNum(it.qty)}</b></span>
-          <span>ทุน <b>฿${fmtK(it.costThb)}</b></span>
+          <span>ทุน <b>${it.trackOnly?'—':'฿'+fmtK(it.costThb)}</b></span>
           <span>มูลค่า <b>${it.valueThb!==null?'฿'+fmtK(it.valueThb):'—'}</b></span>
         </div>
       </div>`;
@@ -1248,6 +1289,7 @@ function openInvestModal(idx){
     document.getElementById('inv-currency').value = it.currency || 'THB';
     document.getElementById('inv-note').value = it.note || '';
     document.getElementById('btn-del-inv').style.display = 'block';
+    setTrackOnlyUI(!!it.trackOnly);
   } else {
     document.getElementById('modal-inv-title').textContent = 'เพิ่มสินทรัพย์';
     document.getElementById('inv-type').value = 'crypto';
@@ -1258,6 +1300,7 @@ function openInvestModal(idx){
     document.getElementById('inv-currency').value = 'THB';
     document.getElementById('inv-note').value = '';
     document.getElementById('btn-del-inv').style.display = 'none';
+    setTrackOnlyUI(false);
   }
   updateInvPriceLabel();
   document.getElementById('inv-currency').onchange = updateInvPriceLabel;
@@ -1269,12 +1312,13 @@ function saveInvest(){
   const symbol = document.getElementById('inv-symbol').value.trim();
   const name = document.getElementById('inv-name').value.trim() || symbol;
   const qty = parseFloat(document.getElementById('inv-qty').value) || 0;
-  const avgPrice = parseFloat(document.getElementById('inv-price').value) || 0;
+  const avgPrice = isTrackOnly ? 0 : (parseFloat(document.getElementById('inv-price').value) || 0);
   const currency = document.getElementById('inv-currency').value;
   const note = document.getElementById('inv-note').value.trim();
+  const trackOnly = isTrackOnly;
   if(!symbol){ toast('❌ กรุณาใส่ symbol'); return; }
   if(!data.investData) data.investData = [];
-  const obj = {type,symbol,name,qty,avgPrice,currency,note};
+  const obj = {type,symbol,name,qty,avgPrice,currency,note,trackOnly};
   if(editInvIdx !== null){
     obj.id = data.investData[editInvIdx].id;
     data.investData[editInvIdx] = obj;
@@ -1366,7 +1410,7 @@ async function fetchPrices(silent){
 loadData();
 renderAll();
 // Auto-fetch prices in background on load
-setTimeout(()=>fetchPrices(true), 800);
+setTimeout(()=>fetchPrices(true), 1000);
 </script>
 </body>
 </html>
