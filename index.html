@@ -2,1145 +2,1371 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="theme-color" content="#f5f1e8">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="DF Dashboard">
+<meta name="theme-color" content="#0c0c0c">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAPMklEQVR4nO3dXUxbV4IH8P/1V2xjcAgxGGKIIYGUhCgVNIHVDJ2o0SptmtVUU82HKs103kaakfo6q9GqmpfZanZfRt3RrGbVees8bHYbbSfbh02UaZLSyZcSJgwtBBKgARxwbDDBMdhg7j5Y18X4615/cJ3D//fS5t7j6+N7/hyfc+61LUFHDodD1vP5qXzC4bCkx/Nu25MyvLQdIS/rEzDElE25wl2WgzLIpFapg13SgzHIVKhSBbskB2GQqVSKDbah2AowzFRKxeapqEAzzFQOxeSqoO6dQabtonUIormHZphpO2nNm6ZAM8ykBy25Ux1ohpn0pDZ/qgLNMFMlUJPDvIFmmKmS5MujqdADz7/PnFN5NbyjfREuZw/N3pkqUa5cZg00w0yVLFs+MwaaYabnQaacFn0vB1ElSQs0e2d6nmzNa9o0koGm583m+z1SemiGmZ5Hm3PLMTQJJRlo9s70PFPyyx6ahMJAk1AkgMMNEgd7aBIKA01CYaBJKAw0CcXACSGJhD00CYWBJqEw0CQUBpqEwkCTUBhoEgoDTUJhoEkoDDQJhYEmoTDQJBQGmoTCQJNQGGgSCgNNQmGgSSgMNAmFgSahMNAkFAaahMJAk1AYaBJKwb9TWGm69gGXf67+GxnWN4DoGhBdB0IRYP4pML8ETPiBkccShmeAiSdlrDCAf/2+jB99o7zPkc/Rf5Lgf6pvHUpJmEBrZTIApl1A1S5gTxXQ5tq8N/GH4VsErtwHLgxKuDIKbPAbTCrejg20Gk21wFt9wFt9MnyLwAfXJPzhGrC6pnfNKBuOoVVqqgXe/baMm+/KeKNb79pQNgy0Rm4n8Psfy/jdj2TYLHrXhrZioAv05kvAuZ/KqLHpXRPajIEuwok24I8/kWE26l0TUjDQRTrRBvzqTS5/VAoGugTe/ibwjXa9a0HADl22O/VrCcOzif+3W4C91cBeB3C8DTjdJaP3QGKdWotff0/Gt96TEN8ofX1vTQD/8Ju0X7GmDHZ8Dx2JAY+CwN2vgN9/Cnzn3yR8658lDIxpO057A3D2WHnqSOrt+EBn8sAPvPlbCb+5qO1xPz3FsbTeGOgc3vtfCX+8rr78iy2Jnpr0w0Dn8Yv/ljCzoL78t3kVUVcMdB6ra8BvL6ufkP39EQ479MRAq/Bft4DYurqyXZ7Eygnpg4FWIRwFrt5XV9ZkAHq8Za0O5cBAq3T9gfphxwtNZawI5cRAqzT4SH3Z9nqOo/XCQKs0Nqe+7IH68tWDctuRl74LEVhOrHhYzfnLNjhL+9wn2oD590vb64v2WUIFe2gNHofUldvrKGs1KAcGWoOlFXXldtsBA+8l0gUDrcFTlYGWJGCXiqEJlR4DrUFUw6e9d3F2ogsGWoM1Dfc6WxhoXTDQGmgZFstcitYFA62BScOHYdXe+0GlxUBroGYNWhGLl68elB1HehpUW9WV25C1TSDz4WcK1WMPrUFtlbpyi8/4xY56YaA1cNeoKxdYLm89KDsGWqX6GvUXS+aWylsXyo6BVqnDrb7swzJ/UTplx0Cr1L1ffdmH85zA6YWBVunvDqqf5X3pK2NFKCcGWoVqK/BNld9dtxZPfAsT6YOBVuF7J9Tfm3HvEX+yQk8MdB5WM/AzDV/xdfELjp/1xEDn8d53ZeyrVV/+T4Plqwvlx0Dn8IuzMt7qU1/+1gQwySU7XfFejgwO1gP/8n1Z85eY/+7PHG7obccH2mZJfKh1bzVwvBV49WhhX3j+pQ/4v7+Vp46k3o4MtJafUFZDloF/PCfxhqQKwDF0CXxwFbg5oXctCGCgi/aXceCX/8Oxc6VgoIvwlwfAD/9DwnoZfiiICsNAF+g/bwE/+HcJ4ajeNaHNduSksBi+EPDueQkX/qp3TSgTBlql2UXgg6sS/vBZaT8vSKXFQOfgWwSujAJ/+quEq6P8nODzYMcGOr4BRNcTve3SCjD/NPHRqcknwJezEv42A0zwMvZzR3I4HOx3SBhc5SChMNAkFAaahMJAk1AYaBIKA01CYaBJKAw0CYWBJqEw0CQUBpqEwkCTUBhoEgoDTUJhoEkoDDQJhYEmoTDQJBQGmoTCQJNQGGgSCgNNQmGgSSgMNAmFgSahMNAkFAaahMJAk1AYaBIKA01CYaBJKAw0CYWBJqEw0CQUBpqEwkCTUBhoEgoDTUJhoEkoDDQJRddfku3p6UFXV1fy32tra4hEIvD7/RgfH8eTJ/l/yvWNN96A0+kEAJw7dw4rKys5yzudThw5cgSNjY2w2+2IRqNYXl7GzMwMJicnEQ6H0+o3NTWFq1evph3r0KFD6OvrQyAQwCeffAIAcLlcOHPmTFrZWCyGhYUFjI+PY2JiImPdrFYrjh07Bo/HA7vdjlgshrm5OQwNDWFxcbEk5+Lo0aPo7u5O2RaPx7GysgK/34+RkREEAoGU/aVop+1SUT+NbDab4XQ64XQ60d7ejrGxMdy4cQOynPnHbmtqapINCADNzc0YGxvLenyPx4OTJ0/CaDQmt9lsNthsNtTX16OjowMfffRR6V7QJhaLBW63G263G01NTRgYGEjZb7fb8frrr8Nutye3Wa1WeL1etLS04NKlS5ibm8t6fK3nYjOj0QiHwwGHw4HW1lZcv34d4+PjWctrbScAmH8/fV/DO5Kq+mlREYFWekDlRLW2tqKzsxMdHR1YXV3F4OBgxse1tLQkH+/1enM2osViQX9/P4xGI6anpzE0NIRQKJRszH379sHtdpfsNcXjcXz44YcAAEmSYLPZ0NbWhp6eHhw4cACTk5OYnZ1Nlu/r64Pdbkc4HMbAwAACgQAcDgd6e3vR2NiI/v5+nD9/HvF4vOhzAQA+nw+XLl0CkDg3e/bswUsvvYS6ujr09vZiZmYmrYcvpJ0yBXnrvlIG2xAOh0v/Z1KgtbU1BAIB3L59G9evXwcAdHV1wWq1Zizf3NwMALh37x5WV1fR2NgIkynz36jH44HFYsHCwgI+/fRTBAIBrK+vIxqNIhgMYmhoCBcvXizL65JlGZFIBMPDw5iengYA7Nu3L7nf4XAkX8tnn32G+fl5xONxLC0t4cqVK4jFYrDb7di/f3/W59ByLrZShjaXL1+GLMswGo1oamrKWl5tO+UKcyHl1KjYSeH4+DjC4TAMBgNaW1vT9lutVrhcLjx79gyhUAg+ny9nQ1RVVQEAgsFgzrfGclPG6GazOblNqXM4HIbf708pH4vFMv4RbKb1XGSzsrKCZ8+eAUj02mpkayetIS1VqCs20ACSY8a9e/em7fN4PJAkKfm27fP5AHzdU22lNFR9fT0MBv1edm1tLQCkTD6VbQsLCxkfo2zfvXt3xv1az0U2FoslOYZfXl5W/bit7VRoOEsR6ooYQ2ejnNSampq0fcqYUWlE5b9K427thX0+H6LRKJxOJ86ePYuxsTHMzc1haWmp7D22JEmoqqpCe3s73G434vE4Hj58mNyvhCjbCk0kEkkpt5XWc7GVyWTC7t270dPTA4PBgFAolDK+zydXO223ig702toagNS3ZyAxK29sbMTGxgYeP34MAFhdXUUwGERdXR1cLlfaW/fq6iquXbuGl19+GbW1tejt7QWQeEv3+Xy4f/9+1lUEr9cLr9erqe5GoxFvv/122vbHjx9jcHAwpYdWxrrr6+sZj6Vs33oelOfRei6AxDBna/3i8TgePXqUd8Viq83tVGwvO/++XNQk0QAAlTQxVKOpqQkmkwlPnjxJnkwg/1utz+fD+fPncfPmTczOziIWi8FiscDr9eL06dPo6+sre93tdjv27NmTsk2S1J3+TCEr9Fxksri4iLt37+Zdy69U4XBYqugeWumRNjcU8HUjbX1bnJmZwdGjR9HS0oI7d+5kPGYsFsPo6ChGR0cBAHV1dWhra0NnZycOHTqE+fl5TE5Opjwm34WVTLYu21mtVjQ0NKCnpwd9fX0wmUz44osvUl5ftlWJXD14oedi87Kd3W5HV1cXOjs7cfr0aXz88ceIRqMZ65JJtnbSQ0UHurq6GkDqBEWSJHg8HgBAd3d32lUv4OuLDEtLS3mfIxgMIhgMYmNjA11dXfB6vWmBLpYsy1hZWcHU1BQikQhee+01HDt2DCMjI9jY2EiOkW02W8bHK2NnpZyiVOciEong1q1bqK6uhsfjwYsvvoibN2+qfn2Z2kkvyel+JQ47GhsbASDl0qrL5cra8JtpneErl3vVHLsYyvOYzeZkEEKhEACkDUUUynalnKLU5+LOnTuQZRnt7e1ZJ6CZZGqn7abkt2J76I6ODlRVVUGWZUxNTSW3K40zOTmJa9eupT2us7MTJ06cQHNzM4aHh1U/X319PYDEhKqcMq0EKONdh8MBl8uVEgyz2Zx1WFHqcxEKhTA9PY2WlhYcOXIEt2/fzvuYre3U8I5U1MSw2KuGKQuyevfSJpMJdXV1OH78eHJsOjw8nDJJURpxZmYm4zGU7S6XK+XKVVNTE06dOoWDBw+itrYWu3btgtFoRE1NDbq7u3H48GEASF7EKDWz2Qy3243+/n4Aibf5p0+fAki8VSth7e/vR0NDQ7JuJ0+ehMViQSQSwVdffZVyzELPRS7KuL6joyPrY9S003banNuK6KGzLYuNj4+n3B+gjAdlWc66Trq8vIylpSU4nU54PB48ePAAAGAwGODxeJJjzkymp6eT5YuVbdkOSEwYP//885RVixs3buDMmTOorq7Gq6++mlJ+Y2MDAwMDKfdxFHMucvH7/fD7/aivr8fhw4dx9+7d5D617VRoL12KezrSAh0OhyWHw6HLteH19fWU2xK3rp8qFxCCwWDOWfj09DScTidaWlqSjTg7O4uLFy9i//79cLlcqKqqgsViQTQaxeLiIh4+fJhysaMcry0cDmNubg4jIyPJ3lkRDodx4cKF5O2jNpsNsVgM8/PzuHfvXtrto8Wci3yGh4fxyiuv4IUXXsg4VMnXToD2UBca5q2jioxH0SvQJB41oS6mZ1YVaIChptIqx/3QmeZ8OY/IUFOlyraAkfO2M71XPYgyyZXLir59lEirvIFmL02VJF8eVfXQDDVVAjU5VD3kYKhJT2rzp2kMzVCTHrTkTvOkkKGm7aQ1b0WFk+vUVC6FdpxFLduxt6ZyKCZXRa9DM9RUSsXmqaRh5BCEClWqjrEsvSuDTWqV+h2+rMMFBpuyKddQddvGvww3bcd86/8B7tn3pca9fX4AAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
 <title>DF Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-
-:root {
-  --bg: #f5f1e8;
-  --paper: #fdfaf3;
-  --card: #ffffff;
-  --ink: #1a1814;
-  --ink-soft: #4a453d;
-  --muted: #8c8478;
-  --line: #e8e2d3;
-  --line-soft: #f0ebde;
-  --accent: #c2410c;
-  --accent-soft: #fed7aa;
-  --accent-bg: #fff4e8;
-  --money: #15803d;
-  --money-bg: #dcfce7;
-  --off: #b91c1c;
-  --off-bg: #fee2e2;
-  --gold: #b45309;
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0c0c0c;
+  --surface:#161616;
+  --surface2:#1e1e1e;
+  --surface3:#252525;
+  --border:#2c2c2c;
+  --accent:#f59e0b;
+  --accent2:#fbbf24;
+  --accent-dim:rgba(245,158,11,0.12);
+  --accent-dim2:rgba(245,158,11,0.06);
+  --text:#ebebeb;
+  --text-muted:#6b6b6b;
+  --text-dim:#3a3a3a;
+  --success:#22c55e;
+  --danger:#ef4444;
+  --info:#3b82f6;
+  --purple:#a78bfa;
+  --nav-h:64px;
+  --header-h:54px;
+  --month-h:46px;
+  --font-body:'Sarabun',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
 }
-
-html, body {
-  font-family: -apple-system, BlinkMacSystemFont, "Sukhumvit Set", "IBM Plex Sans Thai", "Noto Sans Thai", "Helvetica Neue", sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  height: 100%;
-  overflow: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'tnum' on, 'lnum' on;
-  user-select: none;
-  -webkit-user-select: none;
-  font-size: 15px;
-  line-height: 1.45;
-}
-
-input, textarea, select { user-select: text; -webkit-user-select: text; }
-
-#app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  height: 100dvh;
-  max-width: 520px;
-  margin: 0 auto;
-  background: var(--bg);
-  position: relative;
-  overflow: hidden;
-}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;overflow:hidden}
+#app{display:flex;flex-direction:column;height:100vh;height:100dvh}
 
 /* HEADER */
-.header { background: var(--paper); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top); flex-shrink: 0; }
-.header-inner { padding: 14px 18px 10px; }
-.header-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
-.header-title {
-  font-family: "Iowan Old Style", "Palatino", Georgia, serif;
-  font-size: 24px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em;
-  display: flex; align-items: baseline; gap: 8px;
+#header{
+  height:var(--header-h);flex-shrink:0;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;padding:0 14px;
 }
-.header-title-mark { display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; align-self: center; margin-bottom: 2px; }
-.header-title-sub { font-size: 13px; font-weight: 400; color: var(--muted); letter-spacing: 0.02em; margin-top: 2px; }
-.header-actions { display: flex; gap: 4px; }
-.icon-btn { width: 36px; height: 36px; border-radius: 10px; background: transparent; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--ink-soft); transition: all 0.15s; }
-.icon-btn:active { background: var(--line-soft); transform: scale(0.96); }
-.icon-btn svg { width: 18px; height: 18px; }
+#header-logo{display:flex;align-items:center;gap:8px}
+#header-logo .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px var(--accent)}
+#header-logo h1{font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--accent);letter-spacing:0.06em}
+#header-actions{display:flex;gap:6px}
+.icon-btn{
+  width:34px;height:34px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--text-muted);transition:all .15s;flex-shrink:0
+}
+.icon-btn:hover,.icon-btn:active{background:var(--accent-dim);color:var(--accent);border-color:rgba(245,158,11,0.4)}
 
-/* Month bar */
-.month-bar-wrap { border-top: 1px solid var(--line-soft); position: relative; }
-.month-bar-wrap::before, .month-bar-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 16px; pointer-events: none; z-index: 2; }
-.month-bar-wrap::before { left: 0; background: linear-gradient(90deg, var(--paper), transparent); }
-.month-bar-wrap::after { right: 0; background: linear-gradient(-90deg, var(--paper), transparent); }
-.month-bar { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 6px 12px 8px; }
-.month-bar::-webkit-scrollbar { display: none; }
-.month-pill { flex-shrink: 0; padding: 8px 14px; background: transparent; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border: none; white-space: nowrap; font-family: inherit; position: relative; transition: color 0.2s; }
-.month-pill.active { color: var(--accent); font-weight: 700; }
-.month-pill.active::after { content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 16px; height: 2px; background: var(--accent); border-radius: 2px; }
-.month-pill .y { font-size: 10px; opacity: 0.7; margin-left: 2px; }
+/* MONTH BAR */
+#month-bar{
+  height:var(--month-h);flex-shrink:0;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  overflow-x:auto;overflow-y:hidden;
+  display:flex;align-items:center;gap:4px;padding:0 12px;
+  scrollbar-width:none;
+}
+#month-bar::-webkit-scrollbar{display:none}
+.month-chip{
+  flex-shrink:0;height:28px;padding:0 13px;border-radius:14px;
+  border:1px solid var(--border);background:transparent;
+  color:var(--text-muted);font-family:var(--font-mono);font-size:11.5px;
+  cursor:pointer;transition:all .15s;white-space:nowrap;user-select:none
+}
+.month-chip:hover{border-color:rgba(245,158,11,0.4);color:var(--text)}
+.month-chip.active{background:var(--accent);border-color:var(--accent);color:#000;font-weight:600}
+.month-chip.no-data{opacity:0.35;font-style:italic}
 
-/* STATS */
-.stats-row { display: flex; background: var(--paper); border-bottom: 1px solid var(--line); }
-.stat-cell { flex: 1; padding: 12px 14px; border-right: 1px solid var(--line-soft); }
-.stat-cell:last-child { border-right: none; }
-.stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; font-weight: 500; }
-.stat-value { font-family: "Iowan Old Style", "Palatino", Georgia, serif; font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; line-height: 1.1; }
-.stat-value .currency { font-size: 13px; font-weight: 400; color: var(--muted); margin-right: 1px; }
-.stat-value.green { color: var(--money); }
-.stat-value.red { color: var(--off); }
-.stat-value .unit { font-size: 11px; font-weight: 400; color: var(--muted); margin-left: 3px; font-family: inherit; }
-
-/* TYPE TABS */
-.type-tabs { display: flex; gap: 6px; padding: 10px 14px; background: var(--paper); border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-.type-tabs::-webkit-scrollbar { display: none; }
-.type-tab { flex-shrink: 0; padding: 6px 12px; border-radius: 20px; background: transparent; font-size: 12.5px; border: 1px solid var(--line); color: var(--ink-soft); cursor: pointer; white-space: nowrap; font-family: inherit; font-weight: 500; }
-.type-tab.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-
-/* MAIN */
-.main { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; background: var(--bg); }
-
-/* Section header */
-.section-head { padding: 14px 18px 6px; display: flex; justify-content: space-between; align-items: baseline; }
-.section-head-title { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
-.section-head-side { font-size: 11px; color: var(--muted); font-family: "Iowan Old Style", Georgia, serif; font-style: italic; }
-
-/* List */
-.list { padding: 0 14px 90px; }
-.df-item { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; position: relative; transition: all 0.15s; }
-.df-item:active { background: var(--paper); transform: scale(0.995); }
-.df-row { display: flex; align-items: center; gap: 12px; }
-.df-day-num { width: 42px; height: 42px; border-radius: 12px; background: var(--accent-bg); color: var(--accent); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: "Iowan Old Style", Georgia, serif; font-weight: 700; font-size: 18px; line-height: 1; flex-shrink: 0; letter-spacing: -0.02em; }
-.df-day-num.off { background: var(--off-bg); color: var(--off); }
-.df-day-num .month-tag { font-family: -apple-system, sans-serif; font-size: 8px; font-weight: 600; letter-spacing: 0.05em; margin-top: 2px; opacity: 0.75; text-transform: uppercase; }
-.df-info { flex: 1; min-width: 0; }
-.df-branch { font-size: 15px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.df-meta { font-size: 11.5px; color: var(--muted); margin-top: 2px; display: flex; align-items: center; gap: 6px; }
-.df-amount { font-family: "Iowan Old Style", Georgia, serif; font-size: 16px; font-weight: 700; color: var(--ink); text-align: right; letter-spacing: -0.02em; white-space: nowrap; }
-.df-amount .currency { font-size: 11px; font-weight: 400; color: var(--muted); margin-right: 1px; }
-.off-badge { display: inline-block; padding: 3px 9px; background: var(--off-bg); color: var(--off); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; font-family: -apple-system, sans-serif; }
-.off-tag { display: inline-block; background: var(--off); color: white; font-size: 9px; padding: 1px 6px; border-radius: 999px; font-weight: 700; letter-spacing: 0.08em; font-family: -apple-system, sans-serif; }
-.mini-bar { height: 3px; background: var(--line-soft); border-radius: 2px; overflow: hidden; margin-top: 10px; }
-.mini-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), #ea580c); border-radius: 2px; transition: width 0.4s ease; }
-.mini-bar-fill.off { background: var(--off); opacity: 0.3; }
-
-/* Empty */
-.empty { text-align: center; padding: 60px 24px; color: var(--muted); }
-.empty-icon { font-size: 36px; margin-bottom: 12px; opacity: 0.4; font-family: "Iowan Old Style", Georgia, serif; }
-.empty-title { font-size: 15px; color: var(--ink-soft); font-weight: 600; margin-bottom: 4px; }
-.empty-sub { font-size: 13px; color: var(--muted); }
-
-/* OVERVIEW */
-.overview { padding: 14px 14px 90px; }
-.hero-card { background: var(--ink); color: var(--paper); border-radius: 18px; padding: 22px; margin-bottom: 10px; position: relative; overflow: hidden; }
-.hero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(194,65,12,0.4), transparent 70%); }
-.hero-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.6; font-weight: 500; margin-bottom: 6px; position: relative; }
-.hero-value { font-family: "Iowan Old Style", Georgia, serif; font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; position: relative; }
-.hero-value .currency { font-size: 18px; font-weight: 400; opacity: 0.5; margin-right: 4px; }
-.hero-sub { font-size: 12px; margin-top: 12px; opacity: 0.85; display: flex; gap: 18px; font-family: "Iowan Old Style", Georgia, serif; position: relative; }
-.hero-sub-item .lab { font-size: 9px; text-transform: uppercase; opacity: 0.7; letter-spacing: 0.1em; font-family: -apple-system, sans-serif; margin-bottom: 2px; }
-.hero-sub-item .val { font-weight: 600; font-size: 14px; }
-.hero-sub-item .val.minus { color: #fda4af; }
-.hero-sub-item .val.plus { color: #86efac; }
-
-.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
-.metric-card { background: var(--card); border: 1px solid var(--line); padding: 14px; border-radius: 14px; }
-.metric-label { font-size: 10px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.1em; font-weight: 500; margin-bottom: 6px; }
-.metric-value { font-family: "Iowan Old Style", Georgia, serif; font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; line-height: 1.15; }
-.metric-value .currency { font-size: 12px; font-weight: 400; color: var(--muted); margin-right: 1px; }
-.metric-value.red { color: var(--off); }
-.metric-value.green { color: var(--money); }
-.metric-sub { font-size: 11px; color: var(--muted); margin-top: 3px; font-family: -apple-system, sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-.chart-card { background: var(--card); border: 1px solid var(--line); padding: 16px 14px 12px; border-radius: 14px; margin-bottom: 10px; }
-.chart-title { font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: baseline; }
-.chart-title-side { font-size: 10px; color: var(--muted); text-transform: none; letter-spacing: 0; font-weight: 400; font-family: "Iowan Old Style", Georgia, serif; font-style: italic; }
-.chart-bars { display: flex; align-items: flex-end; gap: 3px; height: 110px; padding: 4px 0 0; }
-.chart-bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; cursor: pointer; }
-.chart-bar { width: 100%; max-width: 22px; background: var(--accent); border-radius: 2px 2px 0 0; transition: opacity 0.2s; min-height: 3px; }
-.chart-bar.off { background: var(--off); opacity: 0.25; }
-.chart-bar-label { font-size: 9px; color: var(--muted); font-family: -apple-system, sans-serif; }
-.chart-bar-col.current .chart-bar-label { color: var(--accent); font-weight: 700; }
-.chart-h-scroll { display: flex; align-items: flex-end; gap: 3px; height: 110px; overflow-x: auto; padding: 4px 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-.chart-h-scroll::-webkit-scrollbar { display: none; }
-.chart-h-scroll .chart-bar-col { flex: 0 0 22px; }
-
-/* BRANCH */
-.branch-item { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 12px; }
-.branch-rank { width: 26px; height: 26px; border-radius: 8px; background: var(--paper); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-family: "Iowan Old Style", Georgia, serif; font-size: 13px; font-weight: 700; color: var(--ink-soft); flex-shrink: 0; }
-.branch-rank.gold { background: var(--gold); color: white; border-color: var(--gold); }
-.branch-rank.silver { background: var(--ink-soft); color: white; border-color: var(--ink-soft); }
-.branch-rank.bronze { background: var(--accent); color: white; border-color: var(--accent); }
-.branch-info { flex: 1; min-width: 0; }
-.branch-name { font-size: 15px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.branch-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.branch-amount { font-family: "Iowan Old Style", Georgia, serif; font-size: 16px; font-weight: 700; color: var(--ink); text-align: right; letter-spacing: -0.01em; }
-.branch-amount .currency { font-size: 11px; font-weight: 400; color: var(--muted); margin-right: 1px; }
-
-.divider-text { display: flex; align-items: center; gap: 10px; padding: 10px 4px 6px; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
-.divider-text::before, .divider-text::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-
-/* FAB */
-.fab { position: absolute; right: 16px; bottom: calc(74px + env(safe-area-inset-bottom)); width: 54px; height: 54px; border-radius: 50%; background: var(--accent); color: white; border: none; box-shadow: 0 6px 18px rgba(194,65,12,0.35), 0 0 0 1px rgba(194,65,12,0.1); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: transform 0.15s; }
-.fab:active { transform: scale(0.92); }
-.fab svg { width: 22px; height: 22px; }
+/* CONTENT */
+#content{flex:1;overflow:hidden;position:relative}
+.tab-page{display:none;height:100%;overflow-y:auto;padding:12px 12px calc(var(--nav-h) + 16px)}
+.tab-page.active{display:block}
+.tab-page::-webkit-scrollbar{width:3px}
+.tab-page::-webkit-scrollbar-track{background:transparent}
+.tab-page::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 
 /* BOTTOM NAV */
-.bottom-nav { display: flex; background: var(--paper); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); flex-shrink: 0; }
-.nav-btn { flex: 1; padding: 10px 4px 8px; background: none; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--muted); font-size: 10.5px; font-weight: 500; font-family: inherit; position: relative; transition: color 0.15s; }
-.nav-btn.active { color: var(--accent); }
-.nav-btn.active::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 22px; height: 2px; background: var(--accent); border-radius: 2px; }
-.nav-btn svg { width: 22px; height: 22px; }
+#bottom-nav{height:var(--nav-h);flex-shrink:0;background:var(--surface);border-top:1px solid var(--border);display:flex;padding-bottom:env(safe-area-inset-bottom)}
+.nav-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;cursor:pointer;color:var(--text-muted);font-size:10.5px;
+  border:none;background:none;transition:color .15s;font-family:var(--font-body);
+}
+.nav-item svg{width:20px;height:20px}
+.nav-item.active{color:var(--accent)}
+@media(max-width:380px){.nav-item{font-size:9.5px}.nav-item svg{width:18px;height:18px}}
+
+/* INVEST */
+.inv-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.inv-summary-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 13px}
+.inv-summary-card.full{grid-column:span 2;background:linear-gradient(135deg,var(--surface) 0%,var(--accent-dim2) 100%)}
+.inv-item{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:11px 13px;margin-bottom:7px;cursor:pointer;transition:border-color .15s
+}
+.inv-item:active{background:var(--surface2)}
+.inv-row1{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.inv-icon{
+  width:34px;height:34px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;flex-shrink:0;font-family:var(--font-mono)
+}
+.inv-icon.crypto{background:rgba(245,158,11,0.15);color:var(--accent)}
+.inv-icon.gold{background:rgba(234,179,8,0.15);color:#fbbf24}
+.inv-icon.stock_us{background:rgba(59,130,246,0.15);color:#60a5fa}
+.inv-icon.stock_th{background:rgba(34,197,94,0.15);color:#4ade80}
+.inv-name{flex:1;min-width:0}
+.inv-name-main{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.inv-name-sub{font-size:11px;color:var(--text-muted);margin-top:1px}
+.inv-pl{text-align:right;flex-shrink:0;font-family:var(--font-mono)}
+.inv-pl-amt{font-size:13px;font-weight:600}
+.inv-pl-pct{font-size:11px;margin-top:1px}
+.inv-pl.up{color:var(--success)}
+.inv-pl.down{color:var(--danger)}
+.inv-pl.flat{color:var(--text-muted)}
+.inv-row2{display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted);font-family:var(--font-mono);padding-top:6px;border-top:1px dashed var(--border)}
+.inv-row2 span{display:flex;gap:4px;align-items:center}
+.inv-row2 b{color:var(--text);font-weight:500}
+.refresh-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:8px 12px;margin-bottom:8px;font-size:11px;color:var(--text-muted)
+}
+.refresh-bar button{
+  background:var(--accent);color:#000;border:none;border-radius:7px;
+  padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font-body);
+  display:flex;align-items:center;gap:5px
+}
+.refresh-bar button:disabled{opacity:0.5;cursor:not-allowed}
+.refresh-bar .spin{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* FAB */
+.fab{
+  position:fixed;bottom:calc(var(--nav-h) + 14px);right:14px;
+  width:50px;height:50px;background:var(--accent);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  border:none;box-shadow:0 4px 24px rgba(245,158,11,0.45);transition:transform .15s;z-index:100
+}
+.fab:active{transform:scale(0.93)}
+.fab svg{color:#000;width:22px;height:22px}
+
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:8px}
+.card-row{display:flex;align-items:center;justify-content:space-between}
+
+/* MONTH SUMMARY */
+.month-summary{
+  background:linear-gradient(135deg,var(--surface) 0%,var(--accent-dim2) 100%);
+  border:1px solid var(--border);border-radius:12px;padding:14px;
+  margin-bottom:10px;display:flex;gap:0
+}
+.ms-stat{flex:1;padding:0 12px;border-right:1px solid var(--border);text-align:center}
+.ms-stat:first-child{padding-left:0;text-align:left}
+.ms-stat:last-child{border-right:none;text-align:right}
+.ms-label{font-size:10.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px}
+.ms-value{font-family:var(--font-mono);font-size:17px;font-weight:600;color:var(--accent)}
+
+/* SECTION HEADER */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;padding:0 2px}
+.section-title{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em}
+.section-count{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}
+
+/* DF ITEM */
+.df-item{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:11px 13px;margin-bottom:7px;display:flex;align-items:center;gap:11px;
+  cursor:pointer;transition:border-color .15s,background .15s
+}
+.df-item:active{background:var(--surface2);border-color:rgba(245,158,11,0.3)}
+.df-date{
+  width:34px;height:34px;background:var(--accent-dim);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--accent);flex-shrink:0
+}
+.df-info{flex:1;min-width:0}
+.df-branch{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.df-meta{font-size:11px;color:var(--text-muted);margin-top:2px}
+.df-value{font-family:var(--font-mono);font-size:13.5px;font-weight:600;text-align:right;flex-shrink:0}
+.df-value.has-v{color:var(--success)}
+.df-value.no-v{color:var(--text-muted)}
+.df-minibar{width:40px;height:3px;background:var(--border);border-radius:2px;flex-shrink:0;overflow:hidden}
+.df-minibar-fill{height:100%;background:var(--success);border-radius:2px;min-width:2px}
+.off-badge{
+  background:rgba(239,68,68,0.12);color:var(--danger);
+  font-size:11px;font-weight:700;padding:3px 9px;
+  border-radius:20px;border:1px solid rgba(239,68,68,0.3);
+  font-family:var(--font-mono);letter-spacing:0.04em;flex-shrink:0
+}
+.off-toggle{
+  display:flex;align-items:center;gap:10px;
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:10px;padding:12px;cursor:pointer;margin-bottom:13px;
+  transition:border-color .15s
+}
+.off-toggle.active{border-color:rgba(239,68,68,0.5);background:rgba(239,68,68,0.06)}
+.off-toggle-label{flex:1;font-size:14px;font-weight:600}
+.off-toggle-desc{font-size:11px;color:var(--text-muted);margin-top:2px}
+.toggle-dot{
+  width:44px;height:26px;border-radius:13px;background:var(--border);
+  position:relative;transition:background .2s;flex-shrink:0
+}
+.toggle-dot::after{
+  content:'';position:absolute;top:3px;left:3px;
+  width:20px;height:20px;border-radius:50%;background:#fff;
+  transition:left .2s;box-shadow:0 1px 4px rgba(0,0,0,.4)
+}
+.off-toggle.active .toggle-dot{background:var(--danger)}
+.off-toggle.active .toggle-dot::after{left:21px}
+.insight-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:8px}
+.insight-row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)}
+.insight-row:last-child{border-bottom:none;padding-bottom:0}
+.insight-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.insight-txt{font-size:13px;line-height:1.5;color:var(--text)}
+
+/* EXP ITEM */
+.exp-item{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:11px 13px;margin-bottom:7px;display:flex;align-items:center;gap:11px;
+  cursor:pointer;transition:border-color .15s
+}
+.exp-item:active{background:var(--surface2)}
+.exp-badge{padding:3px 9px;border-radius:20px;font-size:11.5px;font-weight:600;flex-shrink:0}
+.exp-badge.t{background:rgba(59,130,246,.15);color:#60a5fa}
+.exp-badge.h{background:rgba(168,85,247,.15);color:#c084fc}
+.exp-badge.d{background:rgba(34,197,94,.15);color:#4ade80}
+.exp-info{flex:1;min-width:0}
+.exp-note{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.exp-meta{font-size:11px;color:var(--text-muted);margin-top:2px}
+.exp-amount{font-family:var(--font-mono);font-size:13.5px;font-weight:600;color:var(--text);flex-shrink:0}
+
+/* STATS GRID */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.stat-grid.cols3{grid-template-columns:1fr 1fr 1fr}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 13px}
+.stat-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.stat-value{font-family:var(--font-mono);font-size:19px;font-weight:600;color:var(--accent)}
+.stat-sub{font-size:11px;color:var(--text-muted);margin-top:2px}
+
+/* BAR CHART */
+.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:8px}
+.bar-row{display:flex;align-items:center;gap:9px;margin-bottom:7px;cursor:pointer}
+.bar-row:last-child{margin-bottom:0}
+.bar-label{width:50px;font-family:var(--font-mono);font-size:10.5px;color:var(--text-muted);flex-shrink:0}
+.bar-track{flex:1;height:18px;background:var(--surface2);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;background:var(--accent);border-radius:4px;transition:width .5s ease;display:flex;align-items:center;justify-content:flex-end;padding-right:5px;min-width:2px}
+.bar-fill-txt{font-family:var(--font-mono);font-size:9px;color:#000;font-weight:600;white-space:nowrap}
+.bar-amount{width:68px;font-family:var(--font-mono);font-size:10.5px;color:var(--text);text-align:right;flex-shrink:0}
+
+/* BRANCH */
+.branch-item{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:11px 13px;margin-bottom:7px;display:flex;align-items:center;gap:11px
+}
+.branch-rank{
+  width:26px;height:26px;border-radius:6px;background:var(--surface2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-size:11px;color:var(--text-muted);flex-shrink:0
+}
+.branch-rank.top{background:var(--accent-dim);color:var(--accent)}
+.branch-info{flex:1;min-width:0}
+.branch-name{font-size:14px;font-weight:600}
+.branch-meta{font-size:11px;color:var(--text-muted);margin-top:2px}
+.branch-total{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--success);flex-shrink:0}
 
 /* MODAL */
-.modal-backdrop { position: fixed; inset: 0; background: rgba(26,24,20,0.5); display: none; align-items: flex-end; justify-content: center; z-index: 100; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-.modal-backdrop.show { display: flex; animation: fadeIn 0.2s; }
-@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
-.modal { background: var(--paper); width: 100%; max-width: 520px; border-radius: 24px 24px 0 0; padding: 12px 18px calc(20px + env(safe-area-inset-bottom)); max-height: 92vh; overflow-y: auto; -webkit-overflow-scrolling: touch; animation: slideUp 0.25s cubic-bezier(0.16,1,0.3,1); }
-@keyframes slideUp { from { transform: translateY(100%) } to { transform: translateY(0) } }
-.modal-handle { width: 36px; height: 4px; background: var(--line); border-radius: 2px; margin: 0 auto 16px; }
-.modal-title { font-family: "Iowan Old Style", Georgia, serif; font-size: 20px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.01em; }
-.modal-subtitle { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
-.form-group { margin-bottom: 14px; }
-.form-row { display: flex; gap: 10px; margin-bottom: 14px; }
-.form-row > * { flex: 1; min-width: 0; }
-.form-label { font-size: 11px; color: var(--muted); margin-bottom: 6px; display: block; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
-.form-input, .form-select { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; font-size: 16px; background: var(--card); font-family: inherit; color: var(--ink); -webkit-appearance: none; appearance: none; }
-.form-input:focus, .form-select:focus { outline: none; border-color: var(--accent); background: white; }
-.form-select { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%238c8478' d='M6 8L0 0h12z'/></svg>"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 32px; }
-.form-checkbox { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; cursor: pointer; }
-.form-checkbox input { width: 20px; height: 20px; accent-color: var(--off); }
-.form-checkbox span { font-size: 14px; color: var(--ink-soft); flex: 1; }
-.btn-row { display: flex; gap: 8px; margin-top: 8px; }
-.btn { flex: 1; padding: 13px; border: none; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; transition: opacity 0.15s, transform 0.15s; }
-.btn:active { transform: scale(0.98); }
-.btn-primary { background: var(--accent); color: white; }
-.btn-secondary { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
-.btn-danger { background: var(--off-bg); color: var(--off); }
-.danger-zone { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:200;
+  display:flex;align-items:flex-end;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .2s
+}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:20px 20px 0 0;padding:16px 16px 32px;
+  width:100%;max-width:480px;max-height:88vh;overflow-y:auto;
+  transform:translateY(100%);transition:transform .25s cubic-bezier(.4,0,.2,1)
+}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-handle{width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 16px}
+.modal-title{font-size:16px;font-weight:600;margin-bottom:16px}
 
-.menu-item { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-.menu-item:active { background: var(--paper); }
-.menu-item-title { font-size: 14px; font-weight: 600; color: var(--ink); }
-.menu-item-title.danger { color: var(--off); }
-.menu-item-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.menu-item-arrow { color: var(--muted); font-size: 18px; }
+/* FORM */
+.form-group{margin-bottom:13px}
+.form-label{font-size:11px;color:var(--text-muted);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:0.06em}
+.form-input,.form-select{
+  width:100%;height:44px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:10px;color:var(--text);font-family:var(--font-body);font-size:15px;
+  padding:0 12px;outline:none;transition:border-color .15s;-webkit-appearance:none
+}
+.form-input:focus,.form-select:focus{border-color:rgba(245,158,11,0.5)}
+.form-select option{background:var(--surface2)}
+.form-row{display:flex;gap:10px}
+.form-row .form-group{flex:1}
+.btn{
+  height:44px;border-radius:10px;border:none;font-family:var(--font-body);
+  font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;
+  display:flex;align-items:center;justify-content:center;gap:6px;width:100%
+}
+.btn-primary{background:var(--accent);color:#000}
+.btn-primary:active{background:var(--accent2)}
+.btn-danger{background:transparent;color:var(--danger);border:1px solid rgba(239,68,68,0.35);margin-top:8px}
+.btn-danger:active{background:rgba(239,68,68,0.1)}
 
 /* TOAST */
-.toast { position: fixed; top: calc(70px + env(safe-area-inset-top)); left: 50%; transform: translateX(-50%) translateY(-120%); background: var(--ink); color: var(--paper); padding: 10px 18px; border-radius: 999px; font-size: 13px; font-weight: 500; z-index: 200; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); pointer-events: none; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,0.18); max-width: 90%; }
-.toast.show { transform: translateX(-50%) translateY(0); }
-
-/* PC */
-@media (min-width: 600px) {
-  body { background: #ebe6d5; }
-  #app { box-shadow: 0 0 0 1px var(--line), 0 16px 48px rgba(0,0,0,0.06); }
+#toast{
+  position:fixed;bottom:calc(var(--nav-h) + 72px);left:50%;
+  transform:translateX(-50%) translateY(10px);
+  background:var(--surface2);border:1px solid var(--border);border-radius:10px;
+  padding:9px 18px;font-size:13px;opacity:0;transition:all .25s;
+  pointer-events:none;z-index:300;white-space:nowrap
 }
-@media (min-width: 900px) {
-  #app { max-width: 560px; margin-top: 24px; margin-bottom: 24px; height: calc(100vh - 48px); height: calc(100dvh - 48px); border-radius: 20px; overflow: hidden; }
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* EMPTY */
+.empty-state{text-align:center;padding:48px 24px;color:var(--text-muted)}
+.empty-state svg{opacity:.25;margin-bottom:12px}
+.empty-state p{font-size:14px;line-height:1.7}
+
+/* CONFIRM DIALOG */
+.confirm-dialog{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;margin:0 16px;max-width:320px;width:calc(100% - 32px)}
+.confirm-dialog h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.confirm-dialog p{font-size:13px;color:var(--text-muted);margin-bottom:16px}
+.confirm-btns{display:flex;gap:8px}
+.confirm-btns button{flex:1;height:40px;border-radius:9px;border:1px solid var(--border);font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font-body)}
+.confirm-btns .cb-cancel{background:var(--surface2);color:var(--text)}
+.confirm-btns .cb-ok{background:var(--danger);color:#fff;border-color:var(--danger)}
+.modal-overlay.center{align-items:center}
+
+@media(min-width:500px){
+  .modal{border-radius:20px;margin:16px auto}
+  .modal-overlay:not(.center){align-items:flex-end}
 }
 </style>
 </head>
 <body>
-
 <div id="app">
-  <header class="header">
-    <div class="header-inner">
-      <div class="header-top">
-        <div>
-          <div class="header-title">
-            <span class="header-title-mark"></span>
-            <span id="header-title">DF Ledger</span>
-          </div>
-          <div class="header-title-sub" id="header-sub">เม.ย. 2569</div>
-        </div>
-        <div class="header-actions">
-          <button class="icon-btn" id="btn-menu" title="เมนู" aria-label="เมนู">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="month-bar-wrap">
-      <div class="month-bar" id="month-bar"></div>
-    </div>
-  </header>
 
-  <div id="stats-container"></div>
-  <div id="filter-container"></div>
-
-  <main class="main" id="main"></main>
-
-  <button class="fab" id="fab" aria-label="เพิ่มรายการ">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-  </button>
-
-  <nav class="bottom-nav">
-    <button class="nav-btn active" data-tab="df">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      <span>DF</span>
-    </button>
-    <button class="nav-btn" data-tab="exp">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      <span>ค่าใช้จ่าย</span>
-    </button>
-    <button class="nav-btn" data-tab="ov">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      <span>ภาพรวม</span>
-    </button>
-    <button class="nav-btn" data-tab="br">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span>สาขา</span>
-    </button>
-  </nav>
+<!-- HEADER -->
+<div id="header">
+<div id="header-logo">
+<div class="dot"></div>
+<h1>DF DASHBOARD</h1>
+</div>
+<div id="header-actions">
+<div class="icon-btn" onclick="downloadSelf()" title="ดาวน์โหลดไฟล์" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.4);color:var(--accent)">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+</div>
+<div class="icon-btn" onclick="backupData()" title="Backup JSON">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l4 4 4-4"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+</div>
+<div class="icon-btn" onclick="triggerRestore()" title="Restore JSON">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+</div>
+<input type="file" id="restore-file" accept=".json" style="display:none" onchange="restoreData(event)">
+</div>
 </div>
 
-<div class="modal-backdrop" id="modal-backdrop">
-  <div class="modal" id="modal-content"></div>
+<!-- MONTH BAR -->
+<div id="month-bar"></div>
+
+<!-- CONTENT -->
+<div id="content">
+<div id="tab-df" class="tab-page active">
+<div id="df-summary"></div>
+<div class="section-header">
+<span class="section-title">รายการ DF</span>
+<span class="section-count" id="df-count"></span>
+</div>
+<div id="df-list"></div>
 </div>
 
-<input type="file" id="file-input" accept=".json,application/json" style="display:none">
+<div id="tab-exp" class="tab-page">
+<div id="exp-summary"></div>
+<div class="section-header">
+<span class="section-title">ค่าใช้จ่าย</span>
+<span class="section-count" id="exp-count"></span>
+</div>
+<div id="exp-list"></div>
+</div>
 
-<div class="toast" id="toast"></div>
+<div id="tab-overview" class="tab-page">
+<div id="overview-content"></div>
+</div>
+
+<div id="tab-branch" class="tab-page">
+<div id="branch-content"></div>
+</div>
+
+<div id="tab-invest" class="tab-page">
+<div id="invest-content"></div>
+</div>
+</div>
+
+<!-- FAB -->
+<button class="fab" id="fab" onclick="openAddModal()">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+</button>
+
+<!-- BOTTOM NAV -->
+<div id="bottom-nav">
+<button class="nav-item active" data-tab="df" onclick="switchTab('df')">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+DF
+</button>
+<button class="nav-item" data-tab="exp" onclick="switchTab('exp')">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+ค่าใช้จ่าย
+</button>
+<button class="nav-item" data-tab="overview" onclick="switchTab('overview')">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+ภาพรวม
+</button>
+<button class="nav-item" data-tab="branch" onclick="switchTab('branch')">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+สาขา
+</button>
+<button class="nav-item" data-tab="invest" onclick="switchTab('invest')">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+ลงทุน
+</button>
+</div>
+</div>
+
+<!-- MODAL: DF -->
+<div class="modal-overlay" id="modal-df">
+<div class="modal">
+<div class="modal-handle"></div>
+<div class="modal-title" id="modal-df-title">เพิ่ม DF</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">วันที่</label>
+<input type="number" class="form-input" id="df-day" placeholder="1–31" min="1" max="31" inputmode="numeric">
+</div>
+<div class="form-group">
+<label class="form-label">เดือน</label>
+<select class="form-select" id="df-month"></select>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">สาขา</label>
+<input type="text" class="form-input" id="df-branch" placeholder="ชื่อสาขา" list="branch-datalist" autocomplete="off">
+<datalist id="branch-datalist"></datalist>
+</div>
+<div class="off-toggle" id="off-toggle" onclick="toggleOff()">
+<div>
+<div class="off-toggle-label">🔴 วันออฟ (OFF)</div>
+<div class="off-toggle-desc">เปิด = ไม่มียอด DF วันนี้</div>
+</div>
+<div class="toggle-dot" id="toggle-dot"></div>
+</div>
+<div class="form-group" id="df-value-group">
+<label class="form-label">ยอด DF (บาท)</label>
+<input type="number" class="form-input" id="df-value" placeholder="0.00" step="0.01" inputmode="decimal">
+</div>
+<button class="btn btn-primary" onclick="saveDf()">บันทึก</button>
+<button class="btn btn-danger" id="btn-del-df" onclick="confirmDeleteDf()" style="display:none">ลบรายการนี้</button>
+</div>
+</div>
+
+<!-- MODAL: Expense -->
+<div class="modal-overlay" id="modal-exp">
+<div class="modal">
+<div class="modal-handle"></div>
+<div class="modal-title" id="modal-exp-title">เพิ่มค่าใช้จ่าย</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">วันที่</label>
+<input type="number" class="form-input" id="exp-day" placeholder="1–31" min="1" max="31" inputmode="numeric">
+</div>
+<div class="form-group">
+<label class="form-label">เดือน</label>
+<select class="form-select" id="exp-month"></select>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">ประเภท</label>
+<select class="form-select" id="exp-type">
+<option value="ตั๋ว">🎫 ตั๋ว</option>
+<option value="โรงแรม">🏨 โรงแรม</option>
+<option value="เดินทาง">🚗 เดินทาง</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">หมายเหตุ</label>
+<input type="text" class="form-input" id="exp-note" placeholder="เช่น BKK-CPN, ที่พักชุมพร">
+</div>
+<div class="form-group">
+<label class="form-label">จำนวนเงิน (บาท)</label>
+<input type="number" class="form-input" id="exp-amount" placeholder="0.00" step="0.01" inputmode="decimal">
+</div>
+<button class="btn btn-primary" onclick="saveExp()">บันทึก</button>
+<button class="btn btn-danger" id="btn-del-exp" onclick="confirmDeleteExp()" style="display:none">ลบรายการนี้</button>
+</div>
+</div>
+
+<!-- MODAL: Investment -->
+<div class="modal-overlay" id="modal-invest">
+<div class="modal">
+<div class="modal-handle"></div>
+<div class="modal-title" id="modal-inv-title">เพิ่มสินทรัพย์</div>
+<div class="form-group">
+<label class="form-label">ประเภท</label>
+<select class="form-select" id="inv-type" onchange="onInvTypeChange()">
+<option value="crypto">🪙 Crypto</option>
+<option value="gold">🟡 ทอง (XAUT)</option>
+<option value="stock_us">🇺🇸 หุ้นสหรัฐ</option>
+<option value="stock_th">🇹🇭 หุ้นไทย (SET)</option>
+</select>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">Symbol</label>
+<input type="text" class="form-input" id="inv-symbol" placeholder="bitcoin / NVDA" autocomplete="off">
+</div>
+<div class="form-group">
+<label class="form-label">ชื่อแสดง</label>
+<input type="text" class="form-input" id="inv-name" placeholder="BTC / NVIDIA" autocomplete="off">
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">จำนวน (Qty)</label>
+<input type="number" class="form-input" id="inv-qty" placeholder="0" step="any" inputmode="decimal">
+</div>
+<div class="form-group">
+<label class="form-label" id="inv-price-label">ราคาทุนเฉลี่ย (THB)</label>
+<input type="number" class="form-input" id="inv-price" placeholder="0.00" step="any" inputmode="decimal">
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">สกุลของราคาทุน</label>
+<select class="form-select" id="inv-currency">
+<option value="THB">THB (บาท)</option>
+<option value="USD">USD (ดอลลาร์)</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">หมายเหตุ (ไม่บังคับ)</label>
+<input type="text" class="form-input" id="inv-note" placeholder="เช่น ซื้อจาก BN Thai">
+</div>
+<button class="btn btn-primary" onclick="saveInvest()">บันทึก</button>
+<button class="btn btn-danger" id="btn-del-inv" onclick="confirmDeleteInvest()" style="display:none">ลบรายการนี้</button>
+</div>
+</div>
+
+<!-- CONFIRM DIALOG -->
+<div class="modal-overlay center" id="modal-confirm">
+<div class="confirm-dialog">
+<h3 id="confirm-title">ยืนยันการลบ</h3>
+<p id="confirm-msg">ต้องการลบรายการนี้ใช่ไหม?</p>
+<div class="confirm-btns">
+<button class="cb-cancel" onclick="closeModal('modal-confirm')">ยกเลิก</button>
+<button class="cb-ok" id="confirm-ok-btn">ลบ</button>
+</div>
+</div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
 
 <script>
-'use strict';
-
-const DEFAULT_DATA = {"dfData":{"Apr 25":[{"d":10,"b":"ชุมพร","v":11127.72},{"d":11,"b":"สุราษ","v":30945.4},{"d":12,"b":"สุราษ","v":5066},{"d":17,"b":"ชุมพร","v":21898.88},{"d":18,"b":"นครปฐม","v":16278.12},{"d":19,"b":"พระราม9","v":6209.8},{"d":20,"b":"โคราช","v":16860.08},{"d":21,"b":"นครศรี","v":36683.44},{"d":22,"b":"ตรัง","v":16956.76},{"d":23,"b":"ลาดกระบัง","v":9541.8},{"d":25,"b":"เชียงใหม่","v":36034.4},{"d":26,"b":"ลำปาง","v":26762.84},{"d":27,"b":"นครศรี","v":30777},{"d":28,"b":"นครศรี","v":null},{"d":29,"b":"สุราษ","v":43242.52},{"d":30,"b":"ชุมพร","v":24934.96}],"May 25":[{"d":1,"b":"ชุมพร","v":null},{"d":3,"b":"ศรีราชา","v":13397.8},{"d":4,"b":"บางบัวทอง","v":11993},{"d":5,"b":"รังสิต","v":null},{"d":6,"b":"อยุธยา","v":18073},{"d":9,"b":"นครปฐม","v":21879.76},{"d":10,"b":"ศรีราชา","v":null},{"d":11,"b":"พระราม9","v":15372},{"d":12,"b":"นครศรี","v":35000},{"d":16,"b":"นครปฐม","v":11811},{"d":17,"b":"อ้อมน้อย","v":9420},{"d":24,"b":"อมตะ","v":8492},{"d":25,"b":"นครศรี","v":null},{"d":26,"b":"พระราม9","v":8618},{"d":28,"b":"ชุมพร","v":null},{"d":29,"b":"นครศรี","v":14019},{"d":30,"b":"มหาชัย","v":null},{"d":31,"b":"อ้อมน้อย","v":35548}],"Jun 25":[{"d":4,"b":"ชุมพร","v":36350},{"d":5,"b":"ชุมพร","v":10815},{"d":6,"b":"สุราษ","v":25290},{"d":7,"b":"สุราษ","v":19387},{"d":8,"b":"นครศรี","v":21062},{"d":9,"b":"ตรัง","v":28261},{"d":14,"b":"พระราม9","v":14089},{"d":15,"b":"บ่อวิน","v":23306},{"d":17,"b":"ศรีราชา","v":18078},{"d":18,"b":"ลาดกระบัง","v":13526},{"d":20,"b":"กาญจนบุรี","v":8209},{"d":21,"b":"ระยอง","v":5000},{"d":27,"b":"ปราจีน","v":12000},{"d":28,"b":"อมตะ","v":19000},{"d":29,"b":"กระบี่","v":null},{"d":30,"b":"นครศรี","v":39000}],"Jul 25":[{"d":1,"b":"นครศรี","v":null},{"d":2,"b":"นครปฐม","v":12307.68},{"d":9,"b":"โคราช","v":null},{"d":10,"b":"ปราจีน","v":35600.24},{"d":12,"b":"ภูเก็ต","v":27799.6},{"d":13,"b":"รังสิต","v":null},{"d":14,"b":"อ้อมน้อย","v":10059.2},{"d":15,"b":"รังสิต","v":22452.28},{"d":18,"b":"สุราษ","v":53743.88},{"d":19,"b":"สุราษ","v":20032.74},{"d":20,"b":"นครศรี","v":31482.24},{"d":21,"b":"นครศรี","v":23970},{"d":23,"b":"ชุมพร","v":null},{"d":24,"b":"ชุมพร","v":31809},{"d":26,"b":"บางบัวทอง","v":null},{"d":27,"b":"นครศรี","v":7040},{"d":31,"b":"นครศรี","v":45000}],"Aug 25":[{"d":1,"b":"อ้อมน้อย","v":17999},{"d":2,"b":"รามคำแหง","v":4731},{"d":3,"b":"พระราม9","v":8652},{"d":4,"b":"นครศรี","v":null},{"d":6,"b":"เชียงใหม่","v":21855},{"d":12,"b":"ศรีราชา","v":9771},{"d":15,"b":"รามคำแหง","v":9623},{"d":16,"b":"รังสิต","v":8603},{"d":17,"b":"อมตะ","v":21817},{"d":20,"b":"ชุมพร","v":null},{"d":21,"b":"ชุมพร","v":21400},{"d":22,"b":"สุราษ","v":30352},{"d":23,"b":"สุราษ","v":16977},{"d":24,"b":"นครศรี","v":39691},{"d":25,"b":"ตรัง","v":17796},{"d":29,"b":"อ้อมน้อย","v":16800},{"d":30,"b":"สมุทร","v":20618},{"d":31,"b":"นครศรี","v":31020}],"Sep 25":[{"d":12,"b":"รังสิต","v":13501},{"d":14,"b":"ศรีราชา","v":16145},{"d":16,"b":"krm","v":null},{"d":17,"b":"ชุมพร","v":37522},{"d":18,"b":"ชุมพร","v":null},{"d":20,"b":"อมตะ","v":8006},{"d":21,"b":"krm","v":null},{"d":22,"b":"สมุทรปราการ","v":6598},{"d":26,"b":"กระบี่","v":34914},{"d":27,"b":"kr plus","v":null},{"d":28,"b":"krm","v":null},{"d":29,"b":"นครศรี","v":null},{"d":30,"b":"ชุมพร","v":27447}],"Oct 25":[{"d":2,"b":"บางนา","v":null},{"d":3,"b":"สุราษ","v":43777},{"d":4,"b":"สุราษ","v":18359},{"d":5,"b":"เพชรบุรี","v":24098},{"d":10,"b":"สมุทรปราการ","v":26227},{"d":12,"b":"นครศรี","v":28229},{"d":15,"b":"ชุมพร","v":32100},{"d":16,"b":"ชุมพร","v":5830},{"d":18,"b":"ลาดกระบัง","v":18282},{"d":19,"b":"krm","v":null},{"d":23,"b":"อมตะ","v":16583},{"d":25,"b":"กระบี่","v":18878},{"d":26,"b":"นครศรี","v":13405},{"d":28,"b":"krm","v":null},{"d":29,"b":"พระราม9","v":9900},{"d":30,"b":"รังสิต","v":8800},{"d":31,"b":"นครศรี","v":12000}],"Nov 25":[{"d":3,"b":"บางบัวทอง","v":12387.6},{"d":4,"b":"ลาดกระบัง","v":8779.4},{"d":5,"b":"ชุมพร","v":null},{"d":6,"b":"ชุมพร","v":35053.04},{"d":7,"b":"สุราษ","v":32018.44},{"d":10,"b":"อ้อมน้อย","v":9331.07},{"d":11,"b":"ลาดกระบัง","v":9769.2},{"d":12,"b":"รังสิต","v":4407.36},{"d":18,"b":"ชุมพร","v":null},{"d":19,"b":"ชุมพร","v":30100.04},{"d":21,"b":"ปิ่นเกล้า","v":null},{"d":22,"b":"อยุธยา","v":null},{"d":23,"b":"นครศรี","v":null},{"d":25,"b":"นครปฐม","v":15005.92},{"d":29,"b":"krm","v":34007.84}],"Dec 25":[{"d":3,"b":"ชุมพร","v":null},{"d":4,"b":"ชุมพร","v":39019.28},{"d":5,"b":"สุราษ","v":44786.12},{"d":6,"b":"สุราษ","v":19374.4},{"d":7,"b":"นครศรี","v":23014.8},{"d":11,"b":"ลาดกระบัง","v":25348.8},{"d":12,"b":"krm","v":null},{"d":13,"b":"krm","v":null},{"d":19,"b":"รังสิต","v":13008},{"d":20,"b":"บางนา","v":15100},{"d":21,"b":"บ่อวิน","v":67556.8},{"d":22,"b":"นครศรี","v":19379},{"d":24,"b":"เชียงใหม่","v":42198},{"d":25,"b":"อยุธยา","v":17349},{"d":26,"b":"กาญจนบุรี","v":40068},{"d":27,"b":"อ้อมน้อย","v":31889},{"d":28,"b":"มหาชัย","v":34865},{"d":29,"b":"อยุธยา","v":55060}],"Jan 26":[{"d":4,"b":"บางบัวทอง","v":null},{"d":5,"b":"นครศรี","v":12673.93},{"d":7,"b":"ระยอง","v":20302},{"d":11,"b":"อยุธยา","v":32521},{"d":13,"b":"ชุมพร","v":null},{"d":14,"b":"ชุมพร","v":25847},{"d":15,"b":"สุราษ","v":21869},{"d":16,"b":"สุราษ","v":47844},{"d":17,"b":"ระยอง","v":null},{"d":18,"b":"รังสิต","v":10287},{"d":19,"b":"ปิ่นเกล้า","v":13892},{"d":29,"b":"อยุธยา","v":null},{"d":30,"b":"พระราม9","v":3130},{"d":31,"b":"ศรีราชา","v":36813}],"Feb 26":[{"d":2,"b":"อยุธยา","v":9859},{"d":3,"b":"ตรัง","v":null},{"d":5,"b":"พระราม9","v":10685},{"d":7,"b":"ระยอง","v":41608},{"d":8,"b":"อมตะ","v":31715},{"d":11,"b":"มหาชัย","v":20591},{"d":12,"b":"ปิ่นเกล้า","v":11395},{"d":13,"b":"ศรีราชา","v":21859},{"d":14,"b":"นครปฐม","v":5622},{"d":15,"b":"อมตะ","v":8036},{"d":16,"b":"บางบัวทอง","v":null},{"d":17,"b":"ชุมพร","v":null},{"d":18,"b":"ชุมพร","v":39283},{"d":22,"b":"นครศรี","v":32242},{"d":24,"b":"อยุธยา","v":24159},{"d":25,"b":"ลาดกระบัง","v":12695},{"d":28,"b":"ฉะเชิงเทรา","v":23873}],"Mar 26":[{"d":6,"b":"สุราษ","v":49883},{"d":7,"b":"สุราษ","v":37184},{"d":8,"b":"นครศรี","v":44971},{"d":9,"b":"บางบัวทอง","v":16650},{"d":10,"b":"อยุธยา","v":9691},{"d":11,"b":"พระราม9","v":null},{"d":12,"b":"ปิ่นเกล้า","v":31994},{"d":16,"b":"นครศรี","v":null},{"d":18,"b":"เชียงใหม่","v":28460},{"d":19,"b":"ปราจีน","v":39835},{"d":21,"b":"ศรีราชา","v":17619},{"d":22,"b":"สุราษ","v":34912},{"d":23,"b":"นครศรี","v":34379},{"d":27,"b":"ลาดกระบัง","v":19708},{"d":28,"b":"สุราษ","v":null},{"d":29,"b":"ฉะเชิงเทรา","v":22428},{"d":31,"b":"อ้อมน้อย","v":10666}],"Apr 26":[{"d":4,"b":"กาญจนบุรี","v":8587},{"d":5,"b":"มหาชัย","v":35249},{"d":6,"b":"นครศรี","v":25489},{"d":7,"b":"สุราษ","v":33848},{"d":8,"b":"อยุธยา","v":null},{"d":9,"b":"ลาดกระบัง","v":18659},{"d":10,"b":"กระบี่","v":null},{"d":11,"b":"ระยอง","v":29690},{"d":18,"b":"ศรีราชา","v":25146},{"d":19,"b":"บ่อวิน","v":18043},{"d":20,"b":"นครศรี","v":37200},{"d":22,"b":"นครปฐม","v":23690},{"d":23,"b":"ศรีราชา","v":9311}]},"expData":{}};
-
-const STORAGE_KEY = 'df_dashboard_v1';
-const DB_NAME = 'df_dashboard_db';
-const DB_STORE = 'data';
-
-// IndexedDB wrapper - more reliable than localStorage on iOS Safari
-let _db = null;
-function openDB() {
-  return new Promise((resolve, reject) => {
-    if (_db) return resolve(_db);
-    const req = indexedDB.open(DB_NAME, 1);
-    req.onupgradeneeded = e => {
-      const db = e.target.result;
-      if (!db.objectStoreNames.contains(DB_STORE)) db.createObjectStore(DB_STORE);
-    };
-    req.onsuccess = e => { _db = e.target.result; resolve(_db); };
-    req.onerror = e => reject(e.target.error);
-  });
-}
-function idbGet(key) {
-  return new Promise((resolve, reject) => {
-    openDB().then(db => {
-      const tx = db.transaction(DB_STORE, 'readonly');
-      const req = tx.objectStore(DB_STORE).get(key);
-      req.onsuccess = () => resolve(req.result);
-      req.onerror = () => reject(req.error);
-    }).catch(reject);
-  });
-}
-function idbSet(key, value) {
-  return new Promise((resolve, reject) => {
-    openDB().then(db => {
-      const tx = db.transaction(DB_STORE, 'readwrite');
-      tx.objectStore(DB_STORE).put(value, key);
-      tx.oncomplete = () => resolve();
-      tx.onerror = () => reject(tx.error);
-    }).catch(reject);
-  });
-}
-const MONTHS = ['Apr 25','May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26'];
-const MONTH_THAI = {Jan:'ม.ค.',Feb:'ก.พ.',Mar:'มี.ค.',Apr:'เม.ย.',May:'พ.ค.',Jun:'มิ.ย.',Jul:'ก.ค.',Aug:'ส.ค.',Sep:'ก.ย.',Oct:'ต.ค.',Nov:'พ.ย.',Dec:'ธ.ค.'};
-const MONTH_THAI_FULL = {Jan:'มกราคม',Feb:'กุมภาพันธ์',Mar:'มีนาคม',Apr:'เมษายน',May:'พฤษภาคม',Jun:'มิถุนายน',Jul:'กรกฎาคม',Aug:'สิงหาคม',Sep:'กันยายน',Oct:'ตุลาคม',Nov:'พฤศจิกายน',Dec:'ธันวาคม'};
-const EXP_TYPES = {
-  ticket: { label: 'ตั๋ว', icon: '✈', color: '#0d9488', bg: '#ccfbf1' },
-  hotel:  { label: 'โรงแรม', icon: '⌂', color: '#7c3aed', bg: '#ede9fe' },
-  travel: { label: 'เดินทาง', icon: '⌖', color: '#c2410c', bg: '#fed7aa' }
-};
-
-let state = { data: null, month: 'Apr 26', tab: 'df', expFilter: 'all' };
-
-// ============ STORAGE ============
-function ensureStructure(d) {
-  if (!d.dfData) d.dfData = {};
-  if (!d.expData) d.expData = {};
-  MONTHS.forEach(m => { if (!d.dfData[m]) d.dfData[m] = []; if (!d.expData[m]) d.expData[m] = []; });
-  return d;
-}
-async function loadData() {
-  // Try IndexedDB first
-  try {
-    const v = await idbGet(STORAGE_KEY);
-    if (v) return ensureStructure(typeof v === 'string' ? JSON.parse(v) : v);
-  } catch (e) { console.warn('IDB load failed', e); }
-  // Migrate from old localStorage if present
-  try {
-    const s = localStorage.getItem(STORAGE_KEY);
-    if (s) {
-      const parsed = ensureStructure(JSON.parse(s));
-      try { await idbSet(STORAGE_KEY, parsed); } catch(_) {}
-      return parsed;
-    }
-  } catch (e) { console.warn('LS load failed', e); }
-  return ensureStructure(JSON.parse(JSON.stringify(DEFAULT_DATA)));
-}
-
-let _saveTimer = null;
-function saveData() {
-  // Debounce saves slightly to avoid hammering disk
-  if (_saveTimer) clearTimeout(_saveTimer);
-  _saveTimer = setTimeout(() => {
-    const payload = JSON.stringify(state.data);
-    idbSet(STORAGE_KEY, payload).catch(e => {
-      console.error('IDB save failed', e);
-      // Fallback: localStorage
-      try { localStorage.setItem(STORAGE_KEY, payload); }
-      catch (_) { showToast('⚠️ บันทึกไม่สำเร็จ'); }
-    });
-    // Always also write to localStorage as a backup mirror (best-effort)
-    try { localStorage.setItem(STORAGE_KEY, payload); } catch(_) {}
-  }, 50);
-}
-
-// ============ UTILS ============
-const $ = id => document.getElementById(id);
-function el(tag, attrs, children) {
-  const n = document.createElement(tag);
-  if (attrs) for (const k in attrs) {
-    if (attrs[k] == null || attrs[k] === false) continue;
-    if (k === 'class') n.className = attrs[k];
-    else if (k === 'html') n.innerHTML = attrs[k];
-    else if (k === 'style') n.style.cssText = attrs[k];
-    else if (k.startsWith('on')) n[k] = attrs[k];
-    else n.setAttribute(k, attrs[k]);
-  }
-  if (children != null) {
-    if (typeof children === 'string') n.textContent = children;
-    else if (Array.isArray(children)) children.forEach(c => { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
-    else n.appendChild(children);
-  }
-  return n;
-}
-function fmtMoney(n) {
-  if (n == null) return '—';
-  return Math.round(n).toLocaleString('en-US');
-}
-function fmtMoneyExact(n) {
-  if (n == null) return '—';
-  return n.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
-}
-function sumValues(arr) { return arr.reduce((s, x) => s + (x.v || 0), 0); }
-function thaiDate(monthStr, day) {
-  const [mon, yy] = monthStr.split(' ');
-  return day + ' ' + (MONTH_THAI[mon] || mon) + ' ' + (parseInt(yy) + 2543);
-}
-function thaiMonthFull(monthStr) {
-  const [mon, yy] = monthStr.split(' ');
-  return (MONTH_THAI_FULL[mon] || mon) + ' ' + (parseInt(yy) + 2543);
-}
-function thaiMonthShort(monthStr) {
-  const [mon, yy] = monthStr.split(' ');
-  return (MONTH_THAI[mon] || mon) + ' ' + (parseInt(yy) + 43);
-}
-
-let toastTimer = null;
-function showToast(msg) {
-  const t = $('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  if (toastTimer) clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
-}
-
-// ============ HEADER ============
-function renderHeader() {
-  const titleMap = { df: 'DF Ledger', exp: 'ค่าใช้จ่าย', ov: 'ภาพรวม', br: 'สรุปสาขา' };
-  $('header-title').textContent = titleMap[state.tab];
-  $('header-sub').textContent = thaiMonthFull(state.month);
-
-  const bar = $('month-bar');
-  bar.innerHTML = '';
-  MONTHS.forEach(m => {
-    const [mon, yy] = m.split(' ');
-    const btn = el('button', {
-      class: 'month-pill' + (m === state.month ? ' active' : ''),
-      onclick: () => switchMonth(m)
-    }, [
-      document.createTextNode(MONTH_THAI[mon] || mon),
-      el('span', { class: 'y' }, ' ' + (parseInt(yy) + 43))
-    ]);
-    bar.appendChild(btn);
-  });
-  setTimeout(() => {
-    const active = bar.querySelector('.month-pill.active');
-    if (active) active.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-  }, 50);
-}
-
-// ============ STATS ============
-function renderStats() {
-  const c = $('stats-container');
-  c.innerHTML = '';
-  if (state.tab === 'ov' || state.tab === 'br') return;
-
-  const dfArr = state.data.dfData[state.month] || [];
-  const expArr = state.data.expData[state.month] || [];
-  const row = el('div', { class: 'stats-row' });
-
-  if (state.tab === 'df') {
-    const dfTotal = sumValues(dfArr);
-    const offDays = dfArr.filter(x => x.v == null).length;
-    const workDays = dfArr.length - offDays;
-    row.appendChild(el('div', { class: 'stat-cell' }, [
-      el('div', { class: 'stat-label' }, 'DF เดือนนี้'),
-      el('div', { class: 'stat-value green' }, [
-        el('span', { class: 'currency' }, '฿'),
-        document.createTextNode(fmtMoney(dfTotal))
-      ])
-    ]));
-    row.appendChild(el('div', { class: 'stat-cell' }, [
-      el('div', { class: 'stat-label' }, 'วันทำงาน'),
-      el('div', { class: 'stat-value' }, [document.createTextNode(workDays), el('span', { class: 'unit' }, 'วัน')])
-    ]));
-    row.appendChild(el('div', { class: 'stat-cell' }, [
-      el('div', { class: 'stat-label' }, 'OFF'),
-      el('div', { class: 'stat-value red' }, [document.createTextNode(offDays), el('span', { class: 'unit' }, 'วัน')])
-    ]));
-  } else {
-    const expTotal = sumValues(expArr);
-    row.appendChild(el('div', { class: 'stat-cell' }, [
-      el('div', { class: 'stat-label' }, 'รวมทั้งหมด'),
-      el('div', { class: 'stat-value red' }, [el('span', { class: 'currency' }, '฿'), document.createTextNode(fmtMoney(expTotal))])
-    ]));
-    row.appendChild(el('div', { class: 'stat-cell' }, [
-      el('div', { class: 'stat-label' }, 'รายการ'),
-      el('div', { class: 'stat-value' }, [document.createTextNode(expArr.length), el('span', { class: 'unit' }, 'ครั้ง')])
-    ]));
-  }
-  c.appendChild(row);
-}
-
-// ============ FILTER ============
-function renderFilter() {
-  const c = $('filter-container');
-  c.innerHTML = '';
-  if (state.tab !== 'exp') return;
-  const tabs = el('div', { class: 'type-tabs' });
-  const items = [['all','ทั้งหมด','☰'],['ticket','ตั๋ว',EXP_TYPES.ticket.icon],['hotel','โรงแรม',EXP_TYPES.hotel.icon],['travel','เดินทาง',EXP_TYPES.travel.icon]];
-  items.forEach(([k, l, ic]) => {
-    tabs.appendChild(el('button', {
-      class: 'type-tab' + (state.expFilter === k ? ' active' : ''),
-      onclick: () => { state.expFilter = k; render(); }
-    }, [el('span', { style: 'font-size:13px' }, ic), document.createTextNode(' ' + l)]));
-  });
-  c.appendChild(tabs);
-}
-
-// ============ DF LIST ============
-function renderDfList() {
-  const main = $('main');
-  main.innerHTML = '';
-  const arr = state.data.dfData[state.month] || [];
-  if (arr.length === 0) {
-    main.appendChild(emptyState('∅', 'ยังไม่มีรายการ DF', 'แตะปุ่ม + เพื่อเพิ่ม'));
-    return;
-  }
-  const sorted = arr.map((x, i) => ({ ...x, _idx: i })).sort((a, b) => a.d - b.d);
-  const validVals = sorted.filter(x => x.v != null).map(x => x.v);
-  const maxV = validVals.length ? Math.max(...validVals) : 1;
-  const offDays = arr.filter(x => x.v == null).length;
-
-  main.appendChild(el('div', { class: 'section-head' }, [
-    el('div', { class: 'section-head-title' }, 'รายการประจำเดือน · ' + arr.length + ' รายการ'),
-    el('div', { class: 'section-head-side' }, offDays > 0 ? offDays + ' วัน OFF' : 'ครบ')
-  ]));
-
-  const list = el('div', { class: 'list' });
-  const [mon] = state.month.split(' ');
-  const monShort = MONTH_THAI[mon] || mon;
-
-  sorted.forEach(item => {
-    const isOff = item.v == null;
-    const pct = isOff ? 100 : (item.v / maxV * 100);
-    const dayStr = String(item.d).padStart(2, '0');
-    const card = el('div', {
-      class: 'df-item',
-      onclick: () => openEditDf(item._idx)
-    }, [
-      el('div', { class: 'df-row' }, [
-        el('div', { class: 'df-day-num' + (isOff ? ' off' : '') }, [
-          document.createTextNode(dayStr),
-          el('div', { class: 'month-tag' }, monShort)
-        ]),
-        el('div', { class: 'df-info' }, [
-          el('div', { class: 'df-branch' }, item.b),
-          el('div', { class: 'df-meta' }, [
-            document.createTextNode(thaiDate(state.month, item.d)),
-            isOff ? el('span', { class: 'off-tag' }, 'OFF') : null
-          ])
-        ]),
-        isOff
-          ? el('div', { class: 'off-badge' }, 'ไม่มีค่า')
-          : el('div', { class: 'df-amount' }, [
-              el('span', { class: 'currency' }, '฿'),
-              document.createTextNode(fmtMoneyExact(item.v))
-            ])
-      ]),
-      el('div', { class: 'mini-bar' }, [
-        el('div', { class: 'mini-bar-fill' + (isOff ? ' off' : ''), style: 'width:' + pct + '%' })
-      ])
-    ]);
-    list.appendChild(card);
-  });
-  main.appendChild(list);
-}
-
-// ============ EXPENSE LIST ============
-function renderExpList() {
-  const main = $('main');
-  main.innerHTML = '';
-  const orig = state.data.expData[state.month] || [];
-  let arr = orig.map((x, i) => ({ ...x, _idx: i }));
-  if (state.expFilter !== 'all') arr = arr.filter(x => x.t === state.expFilter);
-  if (arr.length === 0) {
-    main.appendChild(emptyState('฿', 'ยังไม่มีค่าใช้จ่าย', 'แตะปุ่ม + เพื่อเพิ่ม'));
-    return;
-  }
-  arr.sort((a, b) => a.d - b.d);
-  const total = arr.reduce((s, x) => s + (x.v || 0), 0);
-  main.appendChild(el('div', { class: 'section-head' }, [
-    el('div', { class: 'section-head-title' }, arr.length + ' รายการ'),
-    el('div', { class: 'section-head-side' }, '฿' + fmtMoney(total) + ' รวม')
-  ]));
-
-  const list = el('div', { class: 'list' });
-  arr.forEach(item => {
-    const t = EXP_TYPES[item.t] || EXP_TYPES.ticket;
-    const card = el('div', {
-      class: 'df-item',
-      onclick: () => openEditExp(item._idx)
-    }, [
-      el('div', { class: 'df-row' }, [
-        el('div', { class: 'df-day-num', style: 'background:' + t.bg + ';color:' + t.color }, [
-          el('div', { style: 'font-size:18px' }, t.icon),
-          el('div', { class: 'month-tag' }, String(item.d).padStart(2, '0'))
-        ]),
-        el('div', { class: 'df-info' }, [
-          el('div', { class: 'df-branch' }, item.desc || t.label),
-          el('div', { class: 'df-meta' }, t.label + ' · ' + thaiDate(state.month, item.d))
-        ]),
-        el('div', { class: 'df-amount', style: 'color:' + t.color }, [
-          el('span', { class: 'currency' }, '฿'),
-          document.createTextNode(fmtMoneyExact(item.v))
-        ])
-      ])
-    ]);
-    list.appendChild(card);
-  });
-  main.appendChild(list);
-}
-
-// ============ OVERVIEW ============
-function renderOverview() {
-  const main = $('main');
-  main.innerHTML = '';
-  const dfArr = state.data.dfData[state.month] || [];
-  const expArr = state.data.expData[state.month] || [];
-  const dfTotal = sumValues(dfArr);
-  const expTotal = sumValues(expArr);
-  const net = dfTotal - expTotal;
-  const workDays = dfArr.filter(x => x.v != null).length;
-  const offDays = dfArr.filter(x => x.v == null).length;
-  const avg = workDays > 0 ? dfTotal / workDays : 0;
-
-  const branchMap = {};
-  dfArr.forEach(x => { if (x.v != null) branchMap[x.b] = (branchMap[x.b] || 0) + x.v; });
-  const topBranch = Object.entries(branchMap).sort((a, b) => b[1] - a[1])[0];
-
-  const sec = el('div', { class: 'overview' });
-
-  sec.appendChild(el('div', { class: 'hero-card' }, [
-    el('div', { class: 'hero-label' }, 'ยอดสุทธิ — ' + thaiMonthFull(state.month)),
-    el('div', { class: 'hero-value' }, [
-      el('span', { class: 'currency' }, '฿'),
-      document.createTextNode(fmtMoneyExact(net))
-    ]),
-    el('div', { class: 'hero-sub' }, [
-      el('div', { class: 'hero-sub-item' }, [
-        el('div', { class: 'lab' }, 'DF'),
-        el('div', { class: 'val plus' }, '฿' + fmtMoney(dfTotal))
-      ]),
-      el('div', { class: 'hero-sub-item' }, [
-        el('div', { class: 'lab' }, 'ค่าใช้จ่าย'),
-        el('div', { class: 'val minus' }, '−฿' + fmtMoney(expTotal))
-      ])
-    ])
-  ]));
-
-  const grid = el('div', { class: 'metric-grid' });
-  grid.appendChild(el('div', { class: 'metric-card' }, [
-    el('div', { class: 'metric-label' }, 'วันทำงาน'),
-    el('div', { class: 'metric-value' }, [document.createTextNode(workDays), el('span', { class: 'currency' }, ' วัน')])
-  ]));
-  grid.appendChild(el('div', { class: 'metric-card' }, [
-    el('div', { class: 'metric-label' }, 'OFF'),
-    el('div', { class: 'metric-value red' }, [document.createTextNode(offDays), el('span', { class: 'currency' }, ' วัน')])
-  ]));
-  grid.appendChild(el('div', { class: 'metric-card' }, [
-    el('div', { class: 'metric-label' }, 'เฉลี่ย/วัน'),
-    el('div', { class: 'metric-value green' }, [el('span', { class: 'currency' }, '฿'), document.createTextNode(fmtMoney(avg))])
-  ]));
-  grid.appendChild(el('div', { class: 'metric-card' }, [
-    el('div', { class: 'metric-label' }, 'สาขายอดเยี่ยม'),
-    el('div', { class: 'metric-value', style: 'font-size:15px' }, topBranch ? topBranch[0] : '—'),
-    el('div', { class: 'metric-sub' }, topBranch ? '฿' + fmtMoney(topBranch[1]) : '')
-  ]));
-  sec.appendChild(grid);
-
-  if (dfArr.length > 0) {
-    const sorted = [...dfArr].sort((a, b) => a.d - b.d);
-    const validVals = sorted.filter(x => x.v != null).map(x => x.v);
-    const maxV = validVals.length ? Math.max(...validVals) : 1;
-    const chartCard = el('div', { class: 'chart-card' }, [
-      el('div', { class: 'chart-title' }, [
-        document.createTextNode('DF รายวัน'),
-        el('span', { class: 'chart-title-side' }, 'สูงสุด ฿' + fmtMoney(maxV))
-      ])
-    ]);
-    const chart = el('div', { class: 'chart-h-scroll' });
-    sorted.forEach(x => {
-      const isOff = x.v == null;
-      const h = isOff ? 6 : Math.max(4, x.v / maxV * 100);
-      chart.appendChild(el('div', { class: 'chart-bar-col' }, [
-        el('div', { class: 'chart-bar' + (isOff ? ' off' : ''), style: 'height:' + h + '%' }),
-        el('div', { class: 'chart-bar-label' }, String(x.d))
-      ]));
-    });
-    chartCard.appendChild(chart);
-    sec.appendChild(chartCard);
-  }
-
-  const monthVals = MONTHS.map(m => sumValues(state.data.dfData[m] || []));
-  const maxM = Math.max(...monthVals, 1);
-  const trendCard = el('div', { class: 'chart-card' }, [
-    el('div', { class: 'chart-title' }, [
-      document.createTextNode('แนวโน้ม 13 เดือน'),
-      el('span', { class: 'chart-title-side' }, 'รวม ฿' + fmtMoney(monthVals.reduce((s,v)=>s+v,0)))
-    ])
-  ]);
-  const trendChart = el('div', { class: 'chart-bars' });
-  MONTHS.forEach((m, i) => {
-    const v = monthVals[i];
-    const h = Math.max(3, v / maxM * 100);
-    const isCurrent = m === state.month;
-    const [mon] = m.split(' ');
-    trendChart.appendChild(el('div', {
-      class: 'chart-bar-col' + (isCurrent ? ' current' : ''),
-      onclick: () => switchMonth(m)
-    }, [
-      el('div', { class: 'chart-bar', style: 'height:' + h + '%' + (isCurrent ? '' : ';background:#d4cdb9') }),
-      el('div', { class: 'chart-bar-label' }, MONTH_THAI[mon] ? MONTH_THAI[mon].replace('.','') : mon)
-    ]));
-  });
-  trendCard.appendChild(trendChart);
-  sec.appendChild(trendCard);
-
-  main.appendChild(sec);
-}
-
-// ============ BRANCH ============
-function renderBranches() {
-  const main = $('main');
-  main.innerHTML = '';
-  const dfArr = state.data.dfData[state.month] || [];
-  const map = {};
-  dfArr.forEach(x => {
-    if (!map[x.b]) map[x.b] = { total: 0, count: 0, off: 0 };
-    if (x.v != null) { map[x.b].total += x.v; map[x.b].count++; }
-    else { map[x.b].off++; }
-  });
-  const list = Object.entries(map).map(([b, v]) => ({ b, ...v })).sort((a, b) => b.total - a.total);
-
-  if (list.length === 0) {
-    main.appendChild(emptyState('◌', 'ยังไม่มีข้อมูลสาขา', 'เลือกเดือนอื่นหรือเพิ่มข้อมูล'));
-    return;
-  }
-
-  const sec = el('div', { class: 'overview' });
-  const totalAll = list.reduce((s, x) => s + x.total, 0);
-  sec.appendChild(el('div', { class: 'hero-card' }, [
-    el('div', { class: 'hero-label' }, 'สรุปสาขา — ' + thaiMonthFull(state.month)),
-    el('div', { class: 'hero-value' }, [
-      document.createTextNode(list.length),
-      el('span', { class: 'currency' }, ' สาขา')
-    ]),
-    el('div', { class: 'hero-sub' }, [
-      el('div', { class: 'hero-sub-item' }, [
-        el('div', { class: 'lab' }, 'DF รวม'),
-        el('div', { class: 'val plus' }, '฿' + fmtMoney(totalAll))
-      ]),
-      el('div', { class: 'hero-sub-item' }, [
-        el('div', { class: 'lab' }, 'อันดับ 1'),
-        el('div', { class: 'val' }, list[0] ? list[0].b : '—')
-      ])
-    ])
-  ]));
-
-  sec.appendChild(el('div', { class: 'divider-text' }, 'อันดับ'));
-
-  list.forEach((x, i) => {
-    const pct = totalAll > 0 ? x.total / totalAll * 100 : 0;
-    const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
-    sec.appendChild(el('div', { class: 'branch-item' }, [
-      el('div', { class: 'branch-rank ' + rankClass }, String(i + 1)),
-      el('div', { class: 'branch-info' }, [
-        el('div', { class: 'branch-name' }, x.b),
-        el('div', { class: 'branch-meta' }, x.count + ' ครั้ง' + (x.off > 0 ? ' · OFF ' + x.off : '') + ' · ' + pct.toFixed(1) + '%'),
-        el('div', { class: 'mini-bar', style: 'margin-top:6px' }, [
-          el('div', { class: 'mini-bar-fill', style: 'width:' + pct + '%' })
-        ])
-      ]),
-      el('div', { class: 'branch-amount' }, [
-        el('span', { class: 'currency' }, '฿'),
-        document.createTextNode(fmtMoney(x.total))
-      ])
-    ]));
-  });
-
-  main.appendChild(sec);
-}
-
-// ============ HELPERS ============
-function emptyState(icon, title, sub) {
-  return el('div', { class: 'empty' }, [
-    el('div', { class: 'empty-icon' }, icon),
-    el('div', { class: 'empty-title' }, title),
-    el('div', { class: 'empty-sub' }, sub)
-  ]);
-}
-function getAllBranches() {
-  const set = new Set();
-  Object.values(state.data.dfData).forEach(arr => arr.forEach(x => x.b && set.add(x.b)));
-  return Array.from(set).sort((a, b) => a.localeCompare(b, 'th'));
-}
-function renderNav() {
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === state.tab));
-  $('fab').style.display = (state.tab === 'df' || state.tab === 'exp') ? 'flex' : 'none';
-}
-function render() {
-  renderHeader();
-  renderStats();
-  renderFilter();
-  switch (state.tab) {
-    case 'df': renderDfList(); break;
-    case 'exp': renderExpList(); break;
-    case 'ov': renderOverview(); break;
-    case 'br': renderBranches(); break;
-  }
-  renderNav();
-  $('main').scrollTop = 0;
-}
-function switchMonth(m) { if (m === state.month) return; state.month = m; render(); }
-function switchTab(t) { state.tab = t; render(); }
-
-// ============ MODAL ============
-function openModal(content) {
-  const c = $('modal-content');
-  c.innerHTML = '';
-  c.appendChild(el('div', { class: 'modal-handle' }));
-  if (Array.isArray(content)) content.forEach(x => x && c.appendChild(x));
-  else c.appendChild(content);
-  $('modal-backdrop').classList.add('show');
-}
-function closeModal() { $('modal-backdrop').classList.remove('show'); }
-
-// ============ DF MODAL ============
-function buildDfForm(initial, isEdit, onSave, onDelete) {
-  const branches = getAllBranches();
-  const dlId = 'dl-' + Date.now();
-  const dayInput = el('input', { class: 'form-input', type: 'number', min: '1', max: '31', inputmode: 'numeric', value: String(initial.d) });
-  const branchInput = el('input', { class: 'form-input', type: 'text', list: dlId, value: initial.b || '', placeholder: 'พิมพ์หรือเลือก' });
-  const valInput = el('input', { class: 'form-input', type: 'number', step: '0.01', inputmode: 'decimal', value: initial.v != null ? String(initial.v) : '', placeholder: '0.00' });
-  const offInput = el('input', { type: 'checkbox' });
-  if (isEdit && initial.v == null) { offInput.checked = true; valInput.disabled = true; }
-  offInput.onchange = () => { valInput.disabled = offInput.checked; if (offInput.checked) valInput.value = ''; };
-
-  const dl = el('datalist', { id: dlId });
-  branches.forEach(b => dl.appendChild(el('option', { value: b })));
-
-  return el('div', {}, [
-    dl,
-    el('div', { class: 'form-row' }, [
-      el('div', {}, [el('label', { class: 'form-label' }, 'วันที่'), dayInput]),
-      el('div', { style: 'flex:2' }, [el('label', { class: 'form-label' }, 'สาขา'), branchInput])
-    ]),
-    el('div', { class: 'form-group' }, [
-      el('label', { class: 'form-label' }, 'จำนวน DF (บาท)'),
-      valInput
-    ]),
-    el('div', { class: 'form-group' }, [
-      el('label', { class: 'form-checkbox' }, [
-        offInput,
-        el('span', {}, 'วันหยุด (OFF) — ไม่มีค่า DF')
-      ])
-    ]),
-    el('div', { class: 'btn-row' }, [
-      el('button', { class: 'btn btn-secondary', onclick: closeModal }, 'ยกเลิก'),
-      el('button', { class: 'btn btn-primary', onclick: () => {
-        const d = parseInt(dayInput.value);
-        const b = branchInput.value.trim();
-        const v = offInput.checked ? null : (valInput.value === '' ? null : parseFloat(valInput.value));
-        if (!d || d < 1 || d > 31) return showToast('⚠️ วันที่ไม่ถูกต้อง');
-        if (!b) return showToast('⚠️ กรุณาใส่ชื่อสาขา');
-        if (!offInput.checked && (v == null || isNaN(v))) return showToast('⚠️ ใส่จำนวน หรือ ติ๊ก OFF');
-        onSave({ d, b, v });
-      } }, 'บันทึก')
-    ]),
-    onDelete ? el('div', { class: 'danger-zone' }, [
-      el('button', { class: 'btn btn-danger', style: 'width:100%', onclick: onDelete }, 'ลบรายการนี้')
-    ]) : null
-  ]);
-}
-
-function openAddDf() {
-  const arr = state.data.dfData[state.month];
-  const today = new Date().getDate();
-  const form = buildDfForm({ d: today, b: '', v: '' }, false, (v) => {
-    arr.push(v); saveData(); closeModal(); render(); showToast('✓ เพิ่มแล้ว');
-  });
-  openModal([
-    el('div', { class: 'modal-title' }, 'เพิ่มรายการ DF'),
-    el('div', { class: 'modal-subtitle' }, thaiMonthFull(state.month)),
-    form
-  ]);
-}
-
-function openEditDf(idx) {
-  const arr = state.data.dfData[state.month];
-  const item = arr[idx];
-  if (!item) return;
-  const form = buildDfForm(item, true, (v) => {
-    arr[idx] = v; saveData(); closeModal(); render(); showToast('✓ บันทึกแล้ว');
-  }, () => {
-    if (confirm('ลบรายการ "' + item.b + ' (วันที่ ' + item.d + ')"?')) {
-      arr.splice(idx, 1); saveData(); closeModal(); render(); showToast('✓ ลบแล้ว');
-    }
-  });
-  openModal([
-    el('div', { class: 'modal-title' }, 'แก้ไขรายการ DF'),
-    el('div', { class: 'modal-subtitle' }, thaiMonthFull(state.month)),
-    form
-  ]);
-}
-
-// ============ EXP MODAL ============
-function buildExpForm(initial, onSave, onDelete) {
-  const dayInput = el('input', { class: 'form-input', type: 'number', min: '1', max: '31', inputmode: 'numeric', value: String(initial.d) });
-  const typeSel = el('select', { class: 'form-select' });
-  Object.entries(EXP_TYPES).forEach(([k, v]) => {
-    const o = el('option', { value: k }, v.icon + '  ' + v.label);
-    if (initial.t === k) o.selected = true;
-    typeSel.appendChild(o);
-  });
-  const descInput = el('input', { class: 'form-input', type: 'text', value: initial.desc || '', placeholder: 'เช่น เครื่องบิน BKK-CNX' });
-  const valInput = el('input', { class: 'form-input', type: 'number', step: '0.01', inputmode: 'decimal', value: initial.v != null ? String(initial.v) : '', placeholder: '0.00' });
-
-  return el('div', {}, [
-    el('div', { class: 'form-row' }, [
-      el('div', {}, [el('label', { class: 'form-label' }, 'วันที่'), dayInput]),
-      el('div', { style: 'flex:2' }, [el('label', { class: 'form-label' }, 'ประเภท'), typeSel])
-    ]),
-    el('div', { class: 'form-group' }, [el('label', { class: 'form-label' }, 'รายละเอียด'), descInput]),
-    el('div', { class: 'form-group' }, [el('label', { class: 'form-label' }, 'จำนวน (บาท)'), valInput]),
-    el('div', { class: 'btn-row' }, [
-      el('button', { class: 'btn btn-secondary', onclick: closeModal }, 'ยกเลิก'),
-      el('button', { class: 'btn btn-primary', onclick: () => {
-        const d = parseInt(dayInput.value);
-        const t = typeSel.value;
-        const desc = descInput.value.trim();
-        const v = parseFloat(valInput.value);
-        if (!d || d < 1 || d > 31) return showToast('⚠️ วันที่ไม่ถูกต้อง');
-        if (!v || v <= 0 || isNaN(v)) return showToast('⚠️ จำนวนไม่ถูกต้อง');
-        onSave({ d, t, desc, v });
-      } }, 'บันทึก')
-    ]),
-    onDelete ? el('div', { class: 'danger-zone' }, [
-      el('button', { class: 'btn btn-danger', style: 'width:100%', onclick: onDelete }, 'ลบรายการนี้')
-    ]) : null
-  ]);
-}
-
-function openAddExp() {
-  const arr = state.data.expData[state.month];
-  const today = new Date().getDate();
-  const initialType = state.expFilter !== 'all' ? state.expFilter : 'ticket';
-  const form = buildExpForm({ d: today, t: initialType, desc: '', v: '' }, (v) => {
-    arr.push(v); saveData(); closeModal(); render(); showToast('✓ เพิ่มแล้ว');
-  });
-  openModal([
-    el('div', { class: 'modal-title' }, 'เพิ่มค่าใช้จ่าย'),
-    el('div', { class: 'modal-subtitle' }, thaiMonthFull(state.month)),
-    form
-  ]);
-}
-
-function openEditExp(idx) {
-  const arr = state.data.expData[state.month];
-  const item = arr[idx];
-  if (!item) return;
-  const form = buildExpForm(item, (v) => {
-    arr[idx] = v; saveData(); closeModal(); render(); showToast('✓ บันทึกแล้ว');
-  }, () => {
-    if (confirm('ลบรายการนี้?')) { arr.splice(idx, 1); saveData(); closeModal(); render(); showToast('✓ ลบแล้ว'); }
-  });
-  openModal([
-    el('div', { class: 'modal-title' }, 'แก้ไขค่าใช้จ่าย'),
-    el('div', { class: 'modal-subtitle' }, thaiMonthFull(state.month)),
-    form
-  ]);
-}
-
-// ============ MENU ============
-function menuItem(title, sub, onclick, danger) {
-  return el('div', { class: 'menu-item', onclick }, [
-    el('div', {}, [
-      el('div', { class: 'menu-item-title' + (danger ? ' danger' : '') }, title),
-      sub ? el('div', { class: 'menu-item-sub' }, sub) : null
-    ]),
-    el('div', { class: 'menu-item-arrow' }, '›')
-  ]);
-}
-
-function openMenu() {
-  let stats = 0;
-  Object.values(state.data.dfData).forEach(arr => stats += arr.length);
-  let expStats = 0;
-  Object.values(state.data.expData).forEach(arr => expStats += arr.length);
-
-  openModal([
-    el('div', { class: 'modal-title' }, 'เมนู'),
-    el('div', { class: 'modal-subtitle' }, 'ข้อมูลทั้งหมด: ' + stats + ' DF · ' + expStats + ' ค่าใช้จ่าย'),
-    menuItem('ส่งออกข้อมูล (Backup)', 'ดาวน์โหลดเป็นไฟล์ JSON', () => { closeModal(); exportData(); }),
-    menuItem('นำเข้าข้อมูล (Restore)', 'อัปโหลดไฟล์ JSON เพื่อกู้คืน', () => { closeModal(); $('file-input').click(); }),
-    menuItem('ล้างข้อมูลทั้งหมด', 'รีเซ็ตเป็นข้อมูลเริ่มต้น', () => {
-      if (confirm('⚠️ ยืนยันล้างข้อมูลทั้งหมด?\nข้อมูลจะกลับไปเป็นค่าเริ่มต้น (เม.ย.68 - เม.ย.69 จาก JSON ที่ใส่ไว้)\nแนะนำให้สำรองข้อมูลก่อน')) {
-        state.data = ensureStructure(JSON.parse(JSON.stringify(DEFAULT_DATA)));
-        saveData(); closeModal(); render(); showToast('✓ รีเซ็ตแล้ว');
-      }
-    }, true),
-    el('div', { style: 'margin-top:14px;padding:10px;text-align:center;font-size:11px;color:var(--muted);font-family:Iowan Old Style,Georgia,serif;font-style:italic' },
-      'DF Ledger · บันทึกอัตโนมัติบนเครื่องนี้'),
-    el('div', { class: 'btn-row', style: 'margin-top:8px' }, [
-      el('button', { class: 'btn btn-secondary', onclick: closeModal }, 'ปิด')
-    ])
-  ]);
-}
-
-// ============ EXPORT/IMPORT ============
-function exportData() {
-  try {
-    const blob = new Blob([JSON.stringify(state.data, null, 2)], { type: 'application/json' });
+function downloadSelf(){
+  try{
+    const html = document.documentElement.outerHTML;
+    const blob = new Blob([html],{type:'text/html'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    const ts = new Date().toISOString().slice(0, 10);
-    a.download = 'df_backup_' + ts + '.json';
+    a.download = 'df-dashboard.html';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    showToast('✓ ส่งออกแล้ว');
-  } catch (e) {
-    showToast('⚠️ ส่งออกไม่สำเร็จ');
+    URL.revokeObjectURL(url);
+    toast('📥 ดาวน์โหลดไฟล์แล้ว');
+  }catch(e){
+    toast('❌ ลองใช้ปุ่ม Backup แทนครับ');
   }
 }
 
-function importData(file) {
+const SEED = {"dfData":{"Apr 25":[{"d":10,"b":"ชุมพร","v":11127.72},{"d":11,"b":"สุราษ","v":30945.4},{"d":12,"b":"สุราษ","v":5066},{"d":17,"b":"ชุมพร","v":21898.88},{"d":18,"b":"นครปฐม","v":16278.12},{"d":19,"b":"พระราม9","v":6209.8},{"d":20,"b":"โคราช","v":16860.08},{"d":21,"b":"นครศรี","v":36683.44},{"d":22,"b":"ตรัง","v":16956.76},{"d":23,"b":"ลาดกระบัง","v":9541.8},{"d":25,"b":"เชียงใหม่","v":36034.4},{"d":26,"b":"ลำปาง","v":26762.84},{"d":27,"b":"นครศรี","v":30777},{"d":28,"b":"นครศรี","v":null},{"d":29,"b":"สุราษ","v":43242.52},{"d":30,"b":"ชุมพร","v":24934.96}],"May 25":[{"d":1,"b":"ชุมพร","v":null},{"d":3,"b":"ศรีราชา","v":13397.8},{"d":4,"b":"บางบัวทอง","v":11993},{"d":5,"b":"รังสิต","v":null},{"d":6,"b":"อยุธยา","v":18073},{"d":9,"b":"นครปฐม","v":21879.76},{"d":10,"b":"ศรีราชา","v":null},{"d":11,"b":"พระราม9","v":15372},{"d":12,"b":"นครศรี","v":35000},{"d":16,"b":"นครปฐม","v":11811},{"d":17,"b":"อ้อมน้อย","v":9420},{"d":24,"b":"อมตะ","v":8492},{"d":25,"b":"นครศรี","v":null},{"d":26,"b":"พระราม9","v":8618},{"d":28,"b":"ชุมพร","v":null},{"d":29,"b":"นครศรี","v":14019},{"d":30,"b":"มหาชัย","v":null},{"d":31,"b":"อ้อมน้อย","v":35548}],"Jun 25":[{"d":4,"b":"ชุมพร","v":36350},{"d":5,"b":"ชุมพร","v":10815},{"d":6,"b":"สุราษ","v":25290},{"d":7,"b":"สุราษ","v":19387},{"d":8,"b":"นครศรี","v":21062},{"d":9,"b":"ตรัง","v":28261},{"d":14,"b":"พระราม9","v":14089},{"d":15,"b":"บ่อวิน","v":23306},{"d":17,"b":"ศรีราชา","v":18078},{"d":18,"b":"ลาดกระบัง","v":13526},{"d":20,"b":"กาญจนบุรี","v":8209},{"d":21,"b":"ระยอง","v":5000},{"d":27,"b":"ปราจีน","v":12000},{"d":28,"b":"อมตะ","v":19000},{"d":29,"b":"กระบี่","v":null},{"d":30,"b":"นครศรี","v":39000}],"Jul 25":[{"d":1,"b":"นครศรี","v":null},{"d":2,"b":"นครปฐม","v":12307.68},{"d":9,"b":"โคราช","v":null},{"d":10,"b":"ปราจีน","v":35600.24},{"d":12,"b":"ภูเก็ต","v":27799.6},{"d":13,"b":"รังสิต","v":null},{"d":14,"b":"อ้อมน้อย","v":10059.2},{"d":15,"b":"รังสิต","v":22452.28},{"d":18,"b":"สุราษ","v":53743.88},{"d":19,"b":"สุราษ","v":20032.74},{"d":20,"b":"นครศรี","v":31482.24},{"d":21,"b":"นครศรี","v":23970},{"d":23,"b":"ชุมพร","v":null},{"d":24,"b":"ชุมพร","v":31809},{"d":26,"b":"บางบัวทอง","v":null},{"d":27,"b":"นครศรี","v":7040},{"d":31,"b":"นครศรี","v":45000}],"Aug 25":[{"d":1,"b":"อ้อมน้อย","v":17999},{"d":2,"b":"รามคำแหง","v":4731},{"d":3,"b":"พระราม9","v":8652},{"d":4,"b":"นครศรี","v":null},{"d":6,"b":"เชียงใหม่","v":21855},{"d":12,"b":"ศรีราชา","v":9771},{"d":15,"b":"รามคำแหง","v":9623},{"d":16,"b":"รังสิต","v":8603},{"d":17,"b":"อมตะ","v":21817},{"d":20,"b":"ชุมพร","v":null},{"d":21,"b":"ชุมพร","v":21400},{"d":22,"b":"สุราษ","v":30352},{"d":23,"b":"สุราษ","v":16977},{"d":24,"b":"นครศรี","v":39691},{"d":25,"b":"ตรัง","v":17796},{"d":29,"b":"อ้อมน้อย","v":16800},{"d":30,"b":"สมุทร","v":20618},{"d":31,"b":"นครศรี","v":31020}],"Sep 25":[{"d":12,"b":"รังสิต","v":13501},{"d":14,"b":"ศรีราชา","v":16145},{"d":16,"b":"krm","v":null},{"d":17,"b":"ชุมพร","v":37522},{"d":18,"b":"ชุมพร","v":null},{"d":20,"b":"อมตะ","v":8006},{"d":21,"b":"krm","v":null},{"d":22,"b":"สมุทรปราการ","v":6598},{"d":26,"b":"กระบี่","v":34914},{"d":27,"b":"kr plus","v":null},{"d":28,"b":"krm","v":null},{"d":29,"b":"นครศรี","v":null},{"d":30,"b":"ชุมพร","v":27447}],"Oct 25":[{"d":2,"b":"บางนา","v":null},{"d":3,"b":"สุราษ","v":43777},{"d":4,"b":"สุราษ","v":18359},{"d":5,"b":"เพชรบุรี","v":24098},{"d":10,"b":"สมุทรปราการ","v":26227},{"d":12,"b":"นครศรี","v":28229},{"d":15,"b":"ชุมพร","v":32100},{"d":16,"b":"ชุมพร","v":5830},{"d":18,"b":"ลาดกระบัง","v":18282},{"d":19,"b":"krm","v":null},{"d":23,"b":"อมตะ","v":16583},{"d":25,"b":"กระบี่","v":18878},{"d":26,"b":"นครศรี","v":13405},{"d":28,"b":"krm","v":null},{"d":29,"b":"พระราม9","v":9900},{"d":30,"b":"รังสิต","v":8800},{"d":31,"b":"นครศรี","v":12000}],"Nov 25":[{"d":3,"b":"บางบัวทอง","v":12387.6},{"d":4,"b":"ลาดกระบัง","v":8779.4},{"d":5,"b":"ชุมพร","v":null},{"d":6,"b":"ชุมพร","v":35053.04},{"d":7,"b":"สุราษ","v":32018.44},{"d":10,"b":"อ้อมน้อย","v":9331.07},{"d":11,"b":"ลาดกระบัง","v":9769.2},{"d":12,"b":"รังสิต","v":4407.36},{"d":18,"b":"ชุมพร","v":null},{"d":19,"b":"ชุมพร","v":30100.04},{"d":21,"b":"ปิ่นเกล้า","v":null},{"d":22,"b":"อยุธยา","v":null},{"d":23,"b":"นครศรี","v":null},{"d":25,"b":"นครปฐม","v":15005.92},{"d":29,"b":"krm","v":34007.84}],"Dec 25":[{"d":3,"b":"ชุมพร","v":null},{"d":4,"b":"ชุมพร","v":39019.28},{"d":5,"b":"สุราษ","v":44786.12},{"d":6,"b":"สุราษ","v":19374.4},{"d":7,"b":"นครศรี","v":23014.8},{"d":11,"b":"ลาดกระบัง","v":25348.8},{"d":12,"b":"krm","v":null},{"d":13,"b":"krm","v":null},{"d":19,"b":"รังสิต","v":13008},{"d":20,"b":"บางนา","v":15100},{"d":21,"b":"บ่อวิน","v":67556.8},{"d":22,"b":"นครศรี","v":19379},{"d":24,"b":"เชียงใหม่","v":42198},{"d":25,"b":"อยุธยา","v":17349},{"d":26,"b":"กาญจนบุรี","v":40068},{"d":27,"b":"อ้อมน้อย","v":31889},{"d":28,"b":"มหาชัย","v":34865},{"d":29,"b":"อยุธยา","v":55060}],"Jan 26":[{"d":4,"b":"บางบัวทอง","v":null},{"d":5,"b":"นครศรี","v":12673.93},{"d":7,"b":"ระยอง","v":20302},{"d":11,"b":"อยุธยา","v":32521},{"d":13,"b":"ชุมพร","v":null},{"d":14,"b":"ชุมพร","v":25847},{"d":15,"b":"สุราษ","v":21869},{"d":16,"b":"สุราษ","v":47844},{"d":17,"b":"ระยอง","v":null},{"d":18,"b":"รังสิต","v":10287},{"d":19,"b":"ปิ่นเกล้า","v":13892},{"d":29,"b":"อยุธยา","v":null},{"d":30,"b":"พระราม9","v":3130},{"d":31,"b":"ศรีราชา","v":36813}],"Feb 26":[{"d":2,"b":"อยุธยา","v":9859},{"d":3,"b":"ตรัง","v":null},{"d":5,"b":"พระราม9","v":10685},{"d":7,"b":"ระยอง","v":41608},{"d":8,"b":"อมตะ","v":31715},{"d":11,"b":"มหาชัย","v":20591},{"d":12,"b":"ปิ่นเกล้า","v":11395},{"d":13,"b":"ศรีราชา","v":21859},{"d":14,"b":"นครปฐม","v":5622},{"d":15,"b":"อมตะ","v":8036},{"d":16,"b":"บางบัวทอง","v":null},{"d":17,"b":"ชุมพร","v":null},{"d":18,"b":"ชุมพร","v":39283},{"d":22,"b":"นครศรี","v":32242},{"d":24,"b":"อยุธยา","v":24159},{"d":25,"b":"ลาดกระบัง","v":12695},{"d":28,"b":"ฉะเชิงเทรา","v":23873}],"Mar 26":[{"d":6,"b":"สุราษ","v":49883},{"d":7,"b":"สุราษ","v":37184},{"d":8,"b":"นครศรี","v":44971},{"d":9,"b":"บางบัวทอง","v":16650},{"d":10,"b":"อยุธยา","v":9691},{"d":11,"b":"พระราม9","v":null},{"d":12,"b":"ปิ่นเกล้า","v":31994},{"d":16,"b":"นครศรี","v":null},{"d":18,"b":"เชียงใหม่","v":28460},{"d":19,"b":"ปราจีน","v":39835},{"d":21,"b":"ศรีราชา","v":17619},{"d":22,"b":"สุราษ","v":34912},{"d":23,"b":"นครศรี","v":34379},{"d":27,"b":"ลาดกระบัง","v":19708},{"d":28,"b":"สุราษ","v":null},{"d":29,"b":"ฉะเชิงเทรา","v":22428},{"d":31,"b":"อ้อมน้อย","v":10666}],"Apr 26":[{"d":4,"b":"กาญจนบุรี","v":8587},{"d":5,"b":"มหาชัย","v":35249},{"d":6,"b":"นครศรี","v":25489},{"d":7,"b":"สุราษ","v":33848},{"d":8,"b":"อยุธยา","v":null},{"d":9,"b":"ลาดกระบัง","v":18659},{"d":10,"b":"กระบี่","v":null},{"d":11,"b":"ระยอง","v":29690},{"d":18,"b":"ศรีราชา","v":25146},{"d":19,"b":"บ่อวิน","v":18043},{"d":20,"b":"นครศรี","v":37200},{"d":22,"b":"นครปฐม","v":23690},{"d":23,"b":"ศรีราชา","v":9311}]},"expData":{},"investData":[{"id":"inv1","type":"crypto","symbol":"bitcoin","name":"BTC","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv2","type":"gold","symbol":"tether-gold","name":"Gold (XAUT)","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv3","type":"stock_us","symbol":"NVDA","name":"NVIDIA","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv4","type":"stock_us","symbol":"TSM","name":"TSMC","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv5","type":"stock_us","symbol":"AAPL","name":"Apple","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv6","type":"stock_us","symbol":"MSFT","name":"Microsoft","qty":0,"avgPrice":0,"currency":"USD","note":""},{"id":"inv7","type":"stock_th","symbol":"TISCO.BK","name":"TISCO","qty":0,"avgPrice":0,"currency":"THB","note":""},{"id":"inv8","type":"stock_th","symbol":"SCB.BK","name":"SCB","qty":0,"avgPrice":0,"currency":"THB","note":""}],"priceCache":{},"usdThbRate":36};
+
+const MONTHS = ['Apr 25','May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26'];
+const KEY = 'df_dash_v3';
+let data = {dfData:{},expData:{}};
+let curMonth = 'Apr 26';
+let curTab = 'df';
+let editDfIdx = null;
+let editExpIdx = null;
+let editDfMonth = null;
+let editExpMonth = null;
+let confirmCb = null;
+
+function loadData(){
+  try{
+    const s = localStorage.getItem(KEY);
+    data = s ? JSON.parse(s) : deepClone(SEED);
+    if(!data.expData) data.expData = {};
+    if(!data.investData) data.investData = deepClone(SEED.investData||[]);
+    if(!data.priceCache) data.priceCache = {};
+    if(!data.usdThbRate) data.usdThbRate = 36;
+  }catch(e){ data = deepClone(SEED); }
+}
+function saveData(){
+  data.savedAt = new Date().toISOString();
+  localStorage.setItem(KEY, JSON.stringify(data));
+}
+function deepClone(o){ return JSON.parse(JSON.stringify(o)); }
+
+function backupData(){
+  const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'df_backup_'+new Date().toISOString().slice(0,10)+'.json';
+  a.click();
+  toast('💾 Backup สำเร็จ');
+}
+function triggerRestore(){ document.getElementById('restore-file').click(); }
+function restoreData(e){
+  const f = e.target.files[0]; if(!f) return;
   const r = new FileReader();
-  r.onload = e => {
-    try {
-      const d = JSON.parse(e.target.result);
-      if (!d.dfData || typeof d.dfData !== 'object') throw new Error('Invalid');
-      if (confirm('ทับข้อมูลเดิมด้วยไฟล์นี้?\n(แนะนำให้ส่งออกข้อมูลปัจจุบันก่อน)')) {
-        state.data = ensureStructure(d);
-        saveData(); render(); showToast('✓ นำเข้าแล้ว');
-      }
-    } catch (err) {
-      showToast('⚠️ ไฟล์ไม่ถูกต้อง');
-    }
+  r.onload = (ev) => {
+    try{
+      const d = JSON.parse(ev.target.result);
+      if(!d.dfData) throw 0;
+      data = d; if(!data.expData) data.expData = {};
+      saveData(); renderAll(); toast('✅ Restore สำเร็จ');
+    }catch{ toast('❌ ไฟล์ไม่ถูกต้อง'); }
   };
-  r.readAsText(file);
+  r.readAsText(f); e.target.value='';
 }
 
-// ============ SWIPE ============
-let swipeStart = null;
-let swipeMoved = false;
-function setupSwipe() {
-  const main = $('main');
-  main.addEventListener('touchstart', e => {
-    if (e.touches.length === 1) {
-      swipeStart = { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() };
-      swipeMoved = false;
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._t); t._t = setTimeout(()=>t.classList.remove('show'),2400);
+}
+function fmt(v){
+  if(v==null||v==='') return null;
+  const n=parseFloat(v); if(isNaN(n)) return null;
+  return n.toLocaleString('th-TH',{minimumFractionDigits:0,maximumFractionDigits:2});
+}
+function fmtK(v){
+  if(v>=1e6) return (v/1e6).toFixed(1)+'M';
+  if(v>=1e3) return (v/1e3).toFixed(1)+'K';
+  return Math.round(v).toLocaleString();
+}
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function showConfirm(title,msg,cb){
+  document.getElementById('confirm-title').textContent = title;
+  document.getElementById('confirm-msg').textContent = msg;
+  confirmCb = cb;
+  document.getElementById('confirm-ok-btn').onclick = ()=>{ closeModal('modal-confirm'); if(confirmCb) confirmCb(); };
+  openModal('modal-confirm');
+}
+
+function switchTab(tab){
+  curTab = tab;
+  document.querySelectorAll('.nav-item').forEach(el=>el.classList.toggle('active',el.dataset.tab===tab));
+  document.querySelectorAll('.tab-page').forEach(el=>el.classList.toggle('active',el.id==='tab-'+tab));
+  const fab = document.getElementById('fab');
+  fab.style.display = (tab==='df'||tab==='exp'||tab==='invest') ? 'flex' : 'none';
+  // Hide month bar on invest tab (not month-based)
+  document.getElementById('month-bar').style.display = (tab==='invest') ? 'none' : 'flex';
+  renderCurrentTab();
+}
+function openAddModal(){
+  if(curTab==='df') openDfModal(null,curMonth);
+  else if(curTab==='exp') openExpModal(null,curMonth);
+  else if(curTab==='invest') openInvestModal(null);
+}
+
+function renderMonthBar(){
+  const bar = document.getElementById('month-bar');
+  bar.innerHTML = '';
+  MONTHS.forEach(m=>{
+    const hasData = (data.dfData[m]||[]).length > 0;
+    const chip = document.createElement('div');
+    chip.className = 'month-chip'+(m===curMonth?' active':'')+(hasData?'':' no-data');
+    chip.textContent = m;
+    chip.onclick = ()=>selectMonth(m);
+    bar.appendChild(chip);
+  });
+  setTimeout(()=>{
+    const a = bar.querySelector('.month-chip.active');
+    if(a) a.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+  },60);
+}
+function selectMonth(m){ curMonth=m; renderMonthBar(); renderCurrentTab(); }
+
+function renderAll(){ renderMonthBar(); renderCurrentTab(); }
+function renderCurrentTab(){
+  if(curTab==='df') renderDfTab();
+  else if(curTab==='exp') renderExpTab();
+  else if(curTab==='overview') renderOverviewTab();
+  else if(curTab==='branch') renderBranchTab();
+  else if(curTab==='invest') renderInvestTab();
+}
+
+function renderDfTab(){
+  const raw = data.dfData[curMonth]||[];
+  const entries = [...raw].sort((a,b)=>a.d-b.d);
+  const valid = entries.filter(e=>e.v!=null);
+  const total = valid.reduce((s,e)=>s+e.v,0);
+  const offCount = entries.length - valid.length;
+  const expEntries = data.expData[curMonth]||[];
+  const expTotal = expEntries.reduce((s,e)=>s+(e.amount||0),0);
+  const avg = valid.length ? total/valid.length : 0;
+
+  document.getElementById('df-summary').innerHTML = `
+    <div class="month-summary">
+      <div class="ms-stat">
+        <div class="ms-label">รวม DF</div>
+        <div class="ms-value">฿${fmtK(total)}</div>
+      </div>
+      <div class="ms-stat">
+        <div class="ms-label">ไป/OFF</div>
+        <div class="ms-value"><span style="color:var(--success)">${valid.length}</span><span style="color:var(--text-muted);font-size:14px"> / </span><span style="color:${offCount>0?'var(--danger)':'var(--text-muted)'}">${offCount}</span></div>
+      </div>
+      <div class="ms-stat">
+        <div class="ms-label">เฉลี่ย/ทริป</div>
+        <div class="ms-value" style="font-size:15px">฿${fmtK(avg)}</div>
+      </div>
+      <div class="ms-stat">
+        <div class="ms-label">ค่าใช้จ่าย</div>
+        <div class="ms-value" style="color:var(--danger);font-size:14px">฿${fmtK(expTotal)}</div>
+      </div>
+    </div>`;
+
+  document.getElementById('df-count').textContent = `${valid.length} ไป · ${offCount} OFF`;
+
+  const list = document.getElementById('df-list');
+  if(!entries.length){
+    list.innerHTML=`<div class="empty-state">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <p>ยังไม่มีข้อมูล DF<br>กด <strong>+</strong> เพื่อเพิ่มทริป</p></div>`;
+    return;
+  }
+  const maxV = valid.length ? Math.max(...valid.map(e=>e.v)) : 1;
+  list.innerHTML = entries.map(e=>{
+    const origIdx = raw.indexOf(e);
+    const hv = e.v!=null;
+    const pct = hv && maxV>0 ? Math.round(e.v/maxV*100) : 0;
+    return `<div class="df-item" onclick="openDfModal(${origIdx},'${curMonth}')">
+      <div class="df-date" style="${!hv?'background:rgba(239,68,68,0.1);color:var(--danger)':''}">${e.d}</div>
+      <div class="df-info">
+        <div class="df-branch">${e.b}</div>
+        <div class="df-meta">${curMonth}</div>
+      </div>
+      ${hv
+        ? `<div class="df-minibar"><div class="df-minibar-fill" style="width:${pct}%"></div></div>
+           <div class="df-value has-v">฿${fmt(e.v)}</div>`
+        : `<span class="off-badge">OFF</span>`}
+    </div>`;
+  }).join('');
+}
+
+function renderExpTab(){
+  const entries = [...(data.expData[curMonth]||[])].sort((a,b)=>(a.d||0)-(b.d||0));
+  const total = entries.reduce((s,e)=>s+(e.amount||0),0);
+  const by = {ตั๋ว:0,โรงแรม:0,เดินทาง:0};
+  entries.forEach(e=>{ if(by[e.type]!==undefined) by[e.type]+=(e.amount||0); });
+
+  document.getElementById('exp-summary').innerHTML = `
+    <div class="stat-grid cols3" style="margin-bottom:10px">
+      <div class="stat-card"><div class="stat-label">🎫 ตั๋ว</div><div class="stat-value" style="font-size:15px;color:#60a5fa">฿${fmtK(by['ตั๋ว'])}</div></div>
+      <div class="stat-card"><div class="stat-label">🏨 โรงแรม</div><div class="stat-value" style="font-size:15px;color:#c084fc">฿${fmtK(by['โรงแรม'])}</div></div>
+      <div class="stat-card"><div class="stat-label">🚗 เดินทาง</div><div class="stat-value" style="font-size:15px;color:#4ade80">฿${fmtK(by['เดินทาง'])}</div></div>
+    </div>
+    <div class="card" style="margin-bottom:10px">
+      <div class="card-row">
+        <span style="color:var(--text-muted);font-size:13px">รวมค่าใช้จ่าย ${curMonth}</span>
+        <span style="font-family:var(--font-mono);font-size:19px;font-weight:600;color:var(--accent)">฿${fmt(total)||'0'}</span>
+      </div>
+    </div>`;
+
+  document.getElementById('exp-count').textContent = entries.length+' รายการ';
+  const list = document.getElementById('exp-list');
+  if(!entries.length){
+    list.innerHTML=`<div class="empty-state">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <p>ยังไม่มีค่าใช้จ่าย<br>กด <strong>+</strong> เพื่อเพิ่ม</p></div>`;
+    return;
+  }
+  const typeClass = {ตั๋ว:'t',โรงแรม:'h',เดินทาง:'d'};
+  const raw = data.expData[curMonth]||[];
+  list.innerHTML = entries.map(e=>{
+    const origIdx = raw.indexOf(e);
+    return `<div class="exp-item" onclick="openExpModal(${origIdx},'${curMonth}')">
+      <span class="exp-badge ${typeClass[e.type]||'t'}">${e.type}</span>
+      <div class="exp-info">
+        <div class="exp-note">${e.note||'—'}</div>
+        <div class="exp-meta">วันที่ ${e.d||'—'} · ${curMonth}</div>
+      </div>
+      <div class="exp-amount">฿${fmt(e.amount)||'0'}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderOverviewTab(){
+  const monthData = MONTHS.map(m=>{
+    const df = data.dfData[m]||[];
+    const valid = df.filter(e=>e.v!=null);
+    const total = valid.reduce((s,e)=>s+e.v,0);
+    const offCnt = df.length - valid.length;
+    const exp = (data.expData[m]||[]).reduce((s,e)=>s+(e.amount||0),0);
+    return {m,total,work:valid.length,off:offCnt,count:df.length,exp};
+  }).filter(x=>x.count>0);
+
+  const maxT = Math.max(...monthData.map(x=>x.total),1);
+  const grandDf = monthData.reduce((s,x)=>s+x.total,0);
+  const grandExp = monthData.reduce((s,x)=>s+x.exp,0);
+  const grandWork = monthData.reduce((s,x)=>s+x.work,0);
+  const grandOff = monthData.reduce((s,x)=>s+x.off,0);
+  const grandAll = grandWork + grandOff;
+  const avgDf = monthData.length ? grandDf/monthData.length : 0;
+  const workPct = grandAll ? Math.round(grandWork/grandAll*100) : 0;
+  const offPct = grandAll ? Math.round(grandOff/grandAll*100) : 0;
+
+  document.getElementById('overview-content').innerHTML = `
+    <div class="stat-grid" style="margin-bottom:8px">
+      <div class="stat-card">
+        <div class="stat-label">รวม DF ทั้งปี</div>
+        <div class="stat-value">฿${fmtK(grandDf)}</div>
+        <div class="stat-sub">${monthData.length} เดือน · เฉลี่ย ฿${fmtK(avgDf)}/เดือน</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">ค่าใช้จ่ายรวม</div>
+        <div class="stat-value" style="color:var(--danger)">฿${fmtK(grandExp)}</div>
+        <div class="stat-sub" style="color:var(--success)">สุทธิ ฿${fmtK(grandDf-grandExp)}</div>
+      </div>
+    </div>
+    <div class="stat-grid cols3" style="margin-bottom:10px">
+      <div class="stat-card">
+        <div class="stat-label">ไปทำงาน</div>
+        <div class="stat-value" style="color:var(--success)">${grandWork}</div>
+        <div class="stat-sub">${workPct}% ของทั้งหมด</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">OFF</div>
+        <div class="stat-value" style="color:var(--danger)">${grandOff}</div>
+        <div class="stat-sub">${offPct}% ของทั้งหมด</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">รวมทั้งหมด</div>
+        <div class="stat-value" style="color:var(--text-muted)">${grandAll}</div>
+        <div class="stat-sub">วัน/ทริป</div>
+      </div>
+    </div>
+    <div class="section-header" style="margin-top:4px"><span class="section-title">DF รายเดือน</span></div>
+    <div class="chart-wrap">
+      ${monthData.map(x=>{
+        const pct = maxT>0?(x.total/maxT*100):0;
+        return `<div class="bar-row" onclick="selectMonth('${x.m}');switchTab('df')">
+          <div class="bar-label">${x.m}</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:${pct}%">
+              ${pct>30?`<span class="bar-fill-txt">${fmtK(x.total)}</span>`:''}
+            </div>
+          </div>
+          <div class="bar-amount">${x.total>0?'฿'+fmtK(x.total):'—'}</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <div class="section-header"><span class="section-title">สรุปรายเดือน</span></div>
+    ${monthData.map(x=>`
+      <div class="card" style="margin-bottom:7px;cursor:pointer" onclick="selectMonth('${x.m}');switchTab('df')">
+        <div class="card-row">
+          <div>
+            <div style="font-weight:600;font-size:13.5px">${x.m}</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px">
+              <span style="color:var(--success)">ไป ${x.work}</span> · <span style="color:var(--danger)">OFF ${x.off}</span>${x.exp>0?` · ค่าใช้จ่าย ฿${fmtK(x.exp)}`:''}
+            </div>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--success)">฿${fmtK(x.total)}</div>
+        </div>
+      </div>`).join('')}`;
+}
+
+function renderBranchTab(){
+  const map = {};
+  MONTHS.forEach(m=>{
+    (data.dfData[m]||[]).forEach(e=>{
+      if(!map[e.b]) map[e.b]={name:e.b,total:0,work:0,off:0,months:new Set()};
+      if(e.v!=null){ map[e.b].total+=e.v; map[e.b].work++; }
+      else { map[e.b].off++; }
+      map[e.b].months.add(m);
+    });
+  });
+  const branches = Object.values(map).map(b=>({...b,avg:b.work?b.total/b.work:0})).sort((a,b)=>b.total-a.total);
+  const el = document.getElementById('branch-content');
+  if(!branches.length){ el.innerHTML=`<div class="empty-state"><p>ไม่มีข้อมูลสาขา</p></div>`; return; }
+
+  const totWork = branches.reduce((s,b)=>s+b.work,0);
+  const totOff = branches.reduce((s,b)=>s+b.off,0);
+  const totAll = totWork+totOff;
+  const bestM = MONTHS.map(m=>{
+    const df=data.dfData[m]||[]; const v=df.filter(e=>e.v!=null);
+    return{m,total:v.reduce((s,e)=>s+e.v,0)};
+  }).filter(x=>x.total>0).sort((a,b)=>b.total-a.total)[0];
+  const mostOff = [...branches].filter(b=>b.off>0).sort((a,b)=>b.off-a.off)[0];
+  const bestAvg = [...branches].filter(b=>b.work>=2).sort((a,b)=>b.avg-a.avg)[0];
+  const mostFreq = [...branches].sort((a,b)=>b.work-a.work)[0];
+
+  el.innerHTML = `
+    <div class="stat-grid cols3" style="margin-bottom:10px">
+      <div class="stat-card">
+        <div class="stat-label">สาขา</div>
+        <div class="stat-value">${branches.length}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">ไปทำงาน</div>
+        <div class="stat-value" style="color:var(--success)">${totWork}</div>
+        <div class="stat-sub">${totAll?Math.round(totWork/totAll*100):0}%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">OFF รวม</div>
+        <div class="stat-value" style="color:var(--danger)">${totOff}</div>
+        <div class="stat-sub">${totAll?Math.round(totOff/totAll*100):0}%</div>
+      </div>
+    </div>
+    <div class="section-header"><span class="section-title">อันดับสาขา</span></div>
+    ${branches.map((b,i)=>`
+      <div class="branch-item">
+        <div class="branch-rank ${i<3?'top':''}">${i+1}</div>
+        <div class="branch-info">
+          <div class="branch-name">${b.name}</div>
+          <div class="branch-meta">
+            <span style="color:var(--success)">ไป ${b.work}</span>${b.off>0?` · <span style="color:var(--danger)">OFF ${b.off}</span>`:''} · ${b.months.size} เดือน
+          </div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div class="branch-total">฿${fmt(b.total)||'0'}</div>
+          ${b.work>=2?`<div style="font-size:10.5px;color:var(--text-muted);font-family:var(--font-mono)">avg ฿${fmtK(b.avg)}</div>`:''}
+        </div>
+      </div>`).join('')}
+    <div class="section-header" style="margin-top:4px"><span class="section-title">💡 Insights</span></div>
+    <div class="insight-box">
+      ${[
+        branches[0]&&{i:'🏆',t:`${branches[0].name} ยอดรวมสูงสุด ฿${fmt(branches[0].total)} (${branches[0].work} ครั้ง)`},
+        mostFreq&&{i:'🔁',t:`${mostFreq.name} ไปบ่อยที่สุด ${mostFreq.work} ครั้ง`},
+        mostOff&&{i:'❌',t:`${mostOff.name} OFF บ่อยที่สุด ${mostOff.off} ครั้ง`},
+        bestAvg&&{i:'📈',t:`${bestAvg.name} ยอดเฉลี่ย/ครั้ง ฿${fmt(bestAvg.avg)}`},
+        bestM&&{i:'📅',t:`เดือนดีที่สุด ${bestM.m} ยอด ฿${fmt(bestM.total)}`},
+        {i:'📊',t:`ไปทำงาน ${totWork} วัน (${totAll?Math.round(totWork/totAll*100):0}%) | OFF ${totOff} วัน (${totAll?Math.round(totOff/totAll*100):0}%)`},
+      ].filter(Boolean).map(x=>`<div class="insight-row"><span class="insight-icon">${x.i}</span><span class="insight-txt">${x.t}</span></div>`).join('')}
+    </div>`;
+}
+
+let isOff = false;
+function toggleOff(){
+  isOff = !isOff;
+  document.getElementById('off-toggle').classList.toggle('active', isOff);
+  document.getElementById('df-value-group').style.display = isOff ? 'none' : 'block';
+  if(isOff) document.getElementById('df-value').value = '';
+}
+function setOffState(val){
+  isOff = (val === null);
+  document.getElementById('off-toggle').classList.toggle('active', isOff);
+  document.getElementById('df-value-group').style.display = isOff ? 'none' : 'block';
+}
+
+function populateMonthSel(selId, selected){
+  const sel = document.getElementById(selId);
+  sel.innerHTML = MONTHS.map(m=>`<option value="${m}"${m===selected?' selected':''}>${m}</option>`).join('');
+}
+function populateBranchList(){
+  const set = new Set();
+  MONTHS.forEach(m=>(data.dfData[m]||[]).forEach(e=>set.add(e.b)));
+  document.getElementById('branch-datalist').innerHTML = [...set].sort().map(b=>`<option value="${b}">`).join('');
+}
+
+function openDfModal(idx, month){
+  editDfIdx = idx; editDfMonth = month||curMonth;
+  populateMonthSel('df-month', editDfMonth);
+  populateBranchList();
+  if(idx!==null){
+    const e = (data.dfData[editDfMonth]||[])[idx]; if(!e) return;
+    document.getElementById('modal-df-title').textContent = 'แก้ไข DF';
+    document.getElementById('df-day').value = e.d;
+    document.getElementById('df-branch').value = e.b;
+    document.getElementById('df-value').value = e.v!==null ? e.v : '';
+    setOffState(e.v);
+    document.getElementById('btn-del-df').style.display = 'block';
+  } else {
+    document.getElementById('modal-df-title').textContent = 'เพิ่ม DF';
+    document.getElementById('df-day').value = '';
+    document.getElementById('df-branch').value = '';
+    document.getElementById('df-value').value = '';
+    setOffState(0);
+    document.getElementById('btn-del-df').style.display = 'none';
+  }
+  openModal('modal-df');
+}
+
+function saveDf(){
+  const day = parseInt(document.getElementById('df-day').value);
+  const month = document.getElementById('df-month').value;
+  const branch = document.getElementById('df-branch').value.trim();
+  const vs = document.getElementById('df-value').value.trim();
+  const value = isOff ? null : (vs===''? null : parseFloat(vs));
+  if(!day||day<1||day>31){ toast('❌ กรุณาใส่วันที่'); return; }
+  if(!branch){ toast('❌ กรุณาใส่ชื่อสาขา'); return; }
+  if(!data.dfData[month]) data.dfData[month]=[];
+  if(editDfIdx!==null){
+    if(editDfMonth && editDfMonth!==month){
+      data.dfData[editDfMonth].splice(editDfIdx,1);
+      if(!data.dfData[month]) data.dfData[month]=[];
+      data.dfData[month].push({d:day,b:branch,v:value});
+    } else {
+      data.dfData[month][editDfIdx]={d:day,b:branch,v:value};
     }
-  }, { passive: true });
-  main.addEventListener('touchmove', e => {
-    if (!swipeStart) return;
-    const dx = e.touches[0].clientX - swipeStart.x;
-    const dy = e.touches[0].clientY - swipeStart.y;
-    if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.5) swipeMoved = true;
-  }, { passive: true });
-  main.addEventListener('touchend', e => {
-    if (!swipeStart || !swipeMoved) { swipeStart = null; return; }
-    const dx = e.changedTouches[0].clientX - swipeStart.x;
-    const dt = Date.now() - swipeStart.t;
-    if (Math.abs(dx) > 60 && dt < 800) {
-      const idx = MONTHS.indexOf(state.month);
-      if (dx < 0 && idx < MONTHS.length - 1) switchMonth(MONTHS[idx + 1]);
-      else if (dx > 0 && idx > 0) switchMonth(MONTHS[idx - 1]);
-    }
-    swipeStart = null;
+  } else {
+    data.dfData[month].push({d:day,b:branch,v:value});
+  }
+  saveData(); curMonth=month; closeModal('modal-df'); renderAll(); toast('✅ บันทึกสำเร็จ');
+}
+
+function confirmDeleteDf(){
+  showConfirm('ลบ DF','ต้องการลบรายการนี้ใช่ไหม?',()=>{
+    if(editDfIdx===null) return;
+    (data.dfData[editDfMonth]||[]).splice(editDfIdx,1);
+    saveData(); closeModal('modal-df'); renderAll(); toast('🗑 ลบแล้ว');
   });
 }
 
-// ============ INIT ============
-async function init() {
-  state.data = await loadData();
+function openExpModal(idx, month){
+  editExpIdx=idx; editExpMonth=month||curMonth;
+  populateMonthSel('exp-month', editExpMonth);
+  if(idx!==null){
+    const e=(data.expData[editExpMonth]||[])[idx]; if(!e) return;
+    document.getElementById('modal-exp-title').textContent='แก้ไขค่าใช้จ่าย';
+    document.getElementById('exp-day').value=e.d||'';
+    document.getElementById('exp-type').value=e.type||'ตั๋ว';
+    document.getElementById('exp-note').value=e.note||'';
+    document.getElementById('exp-amount').value=e.amount||'';
+    document.getElementById('btn-del-exp').style.display='block';
+  } else {
+    document.getElementById('modal-exp-title').textContent='เพิ่มค่าใช้จ่าย';
+    document.getElementById('exp-day').value='';
+    document.getElementById('exp-type').value='ตั๋ว';
+    document.getElementById('exp-note').value='';
+    document.getElementById('exp-amount').value='';
+    document.getElementById('btn-del-exp').style.display='none';
+  }
+  openModal('modal-exp');
+}
 
-  // Default to last month with data
-  for (let i = MONTHS.length - 1; i >= 0; i--) {
-    if ((state.data.dfData[MONTHS[i]] || []).length > 0) {
-      state.month = MONTHS[i]; break;
+function saveExp(){
+  const day=parseInt(document.getElementById('exp-day').value)||null;
+  const month=document.getElementById('exp-month').value;
+  const type=document.getElementById('exp-type').value;
+  const note=document.getElementById('exp-note').value.trim();
+  const amount=parseFloat(document.getElementById('exp-amount').value)||0;
+  if(!data.expData[month]) data.expData[month]=[];
+  if(editExpIdx!==null){
+    if(editExpMonth&&editExpMonth!==month){
+      data.expData[editExpMonth].splice(editExpIdx,1);
+      if(!data.expData[month]) data.expData[month]=[];
+      data.expData[month].push({d:day,type,note,amount});
+    } else {
+      data.expData[month][editExpIdx]={d:day,type,note,amount};
     }
+  } else {
+    data.expData[month].push({d:day,type,note,amount});
+  }
+  saveData(); curMonth=month; closeModal('modal-exp'); renderAll(); toast('✅ บันทึกสำเร็จ');
+}
+
+function confirmDeleteExp(){
+  showConfirm('ลบค่าใช้จ่าย','ต้องการลบรายการนี้ใช่ไหม?',()=>{
+    if(editExpIdx===null) return;
+    (data.expData[editExpMonth]||[]).splice(editExpIdx,1);
+    saveData(); closeModal('modal-exp'); renderAll(); toast('🗑 ลบแล้ว');
+  });
+}
+
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+  o.addEventListener('click',e=>{ if(e.target===o) o.classList.remove('open'); });
+});
+
+(function(){
+  let sx=0,sy=0,sTime=0;
+  const el = document.getElementById('content');
+  el.addEventListener('touchstart',e=>{
+    sx=e.touches[0].clientX; sy=e.touches[0].clientY; sTime=Date.now();
+  },{passive:true});
+  el.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-sx;
+    const dy=e.changedTouches[0].clientY-sy;
+    const dt=Date.now()-sTime;
+    if(dt>400||Math.abs(dy)>Math.abs(dx)||Math.abs(dx)<50) return;
+    if(curTab!=='df'&&curTab!=='exp') return;
+    const idx=MONTHS.indexOf(curMonth);
+    if(dx<0&&idx<MONTHS.length-1){ selectMonth(MONTHS[idx+1]); }
+    else if(dx>0&&idx>0){ selectMonth(MONTHS[idx-1]); }
+  },{passive:true});
+})();
+
+// ============================================================
+// INVESTMENT
+// ============================================================
+let editInvIdx = null;
+
+function fmtNum(v){
+  if(v==null||isNaN(v)) return '—';
+  const n = Number(v);
+  if(n === Math.floor(n)) return n.toLocaleString('en-US');
+  return n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:6});
+}
+
+function timeAgo(t){
+  if(!t) return '';
+  const sec = Math.floor((Date.now()-t)/1000);
+  if(sec < 60) return sec + ' วิที่แล้ว';
+  if(sec < 3600) return Math.floor(sec/60) + ' นาทีที่แล้ว';
+  if(sec < 86400) return Math.floor(sec/3600) + ' ชั่วโมงที่แล้ว';
+  return Math.floor(sec/86400) + ' วันที่แล้ว';
+}
+
+function renderInvestTab(){
+  const holdings = data.investData || [];
+  const cache = data.priceCache || {};
+  const usdThbRate = data.usdThbRate || 36;
+
+  const items = holdings.map(h => {
+    const c = cache[h.symbol];
+    const buyCur = h.currency || 'THB';
+    let costThb = (h.qty||0) * (h.avgPrice||0);
+    if(buyCur === 'USD') costThb *= usdThbRate;
+    let currentThb = null;
+    if(c && c.thb != null) currentThb = c.thb;
+    const valueThb = currentThb !== null ? (h.qty||0) * currentThb : null;
+    const pl = valueThb !== null ? valueThb - costThb : null;
+    const plPct = costThb > 0 && pl !== null ? (pl/costThb*100) : null;
+    return {...h, costThb, currentThb, valueThb, pl, plPct, hasPrice: !!c, t: c?c.t:0};
+  });
+
+  const totalCost = items.reduce((s,i)=>s+(i.costThb||0),0);
+  const totalValue = items.reduce((s,i)=>s+(i.valueThb||0),0);
+  const totalPL = totalValue - totalCost;
+  const totalPLPct = totalCost > 0 ? totalPL/totalCost*100 : 0;
+  const times = items.filter(i=>i.t).map(i=>i.t);
+  const lastUpdate = times.length ? Math.max(...times) : 0;
+
+  let html = `
+    <div class="refresh-bar">
+      <span>${lastUpdate ? '🕐 อัปเดต ' + timeAgo(lastUpdate) : 'ยังไม่ได้อัปเดตราคา'}</span>
+      <button id="btn-refresh" onclick="fetchPrices()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        Refresh
+      </button>
+    </div>
+    <div class="inv-summary">
+      <div class="inv-summary-card full">
+        <div class="stat-label">มูลค่าพอร์ต (THB)</div>
+        <div style="font-family:var(--font-mono);font-size:24px;font-weight:600;color:var(--accent);margin-top:2px">฿${fmtK(totalValue)}</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:12px">
+          <span style="color:var(--text-muted)">ทุน ฿${fmtK(totalCost)}</span>
+          <span style="color:${totalPL>=0?'var(--success)':'var(--danger)'};font-family:var(--font-mono);font-weight:600">
+            ${totalPL>=0?'+':'-'}฿${fmtK(Math.abs(totalPL))} (${totalPL>=0?'+':''}${totalPLPct.toFixed(2)}%)
+          </span>
+        </div>
+      </div>
+      <div class="inv-summary-card">
+        <div class="stat-label">USD / THB</div>
+        <div style="font-family:var(--font-mono);font-size:17px;font-weight:600;color:var(--text);margin-top:2px">${usdThbRate.toFixed(2)}</div>
+      </div>
+      <div class="inv-summary-card">
+        <div class="stat-label">รายการ</div>
+        <div style="font-family:var(--font-mono);font-size:17px;font-weight:600;color:var(--text);margin-top:2px">${holdings.length}</div>
+      </div>
+    </div>
+    <div class="section-header">
+      <span class="section-title">สินทรัพย์</span>
+      <span class="section-count">${items.filter(i=>i.qty>0).length} active</span>
+    </div>`;
+
+  if(!holdings.length){
+    html += `<div class="empty-state"><p>ยังไม่มีสินทรัพย์<br>กด <strong>+</strong> เพื่อเพิ่ม</p></div>`;
+  } else {
+    // Sort: those with qty > 0 first, then by value desc
+    const sorted = [...items].map((it,idx)=>({...it,_idx:idx})).sort((a,b)=>{
+      if((a.qty>0) !== (b.qty>0)) return a.qty>0 ? -1 : 1;
+      return (b.valueThb||0) - (a.valueThb||0);
+    });
+    sorted.forEach(it => {
+      const cls = it.pl===null ? 'flat' : (Math.abs(it.pl)<0.01 ? 'flat' : (it.pl>0 ? 'up' : 'down'));
+      const sign = it.pl>0 ? '+' : (it.pl<0 ? '-' : '');
+      const typeLabel = {crypto:'Crypto',gold:'Gold',stock_us:'US Stock',stock_th:'TH Stock'}[it.type]||'Other';
+      const iconText = (it.name||it.symbol).slice(0,3).toUpperCase();
+      html += `<div class="inv-item" onclick="openInvestModal(${it._idx})" ${it.qty===0?'style="opacity:0.55"':''}>
+        <div class="inv-row1">
+          <div class="inv-icon ${it.type}">${iconText}</div>
+          <div class="inv-name">
+            <div class="inv-name-main">${it.name||it.symbol}</div>
+            <div class="inv-name-sub">${typeLabel} · ${it.symbol}${!it.hasPrice?' · ⚠ ไม่มีราคา':''}</div>
+          </div>
+          <div class="inv-pl ${cls}">
+            <div class="inv-pl-amt">${it.pl!==null?sign+'฿'+fmtK(Math.abs(it.pl)):'—'}</div>
+            <div class="inv-pl-pct">${it.plPct!==null?(it.plPct>0?'+':'')+it.plPct.toFixed(2)+'%':'—'}</div>
+          </div>
+        </div>
+        <div class="inv-row2">
+          <span>Qty <b>${fmtNum(it.qty)}</b></span>
+          <span>ทุน <b>฿${fmtK(it.costThb)}</b></span>
+          <span>มูลค่า <b>${it.valueThb!==null?'฿'+fmtK(it.valueThb):'—'}</b></span>
+        </div>
+      </div>`;
+    });
   }
 
-  document.querySelectorAll('.nav-btn').forEach(b => {
-    b.onclick = () => switchTab(b.dataset.tab);
-  });
-
-  $('fab').onclick = () => {
-    if (state.tab === 'df') openAddDf();
-    else if (state.tab === 'exp') openAddExp();
-  };
-
-  $('btn-menu').onclick = openMenu;
-
-  $('file-input').onchange = e => {
-    if (e.target.files[0]) importData(e.target.files[0]);
-    e.target.value = '';
-  };
-
-  $('modal-backdrop').onclick = e => {
-    if (e.target === $('modal-backdrop')) closeModal();
-  };
-
-  setupSwipe();
-  render();
+  document.getElementById('invest-content').innerHTML = html;
 }
 
-init();
+function onInvTypeChange(){
+  const type = document.getElementById('inv-type').value;
+  const cur = document.getElementById('inv-currency');
+  if(type === 'stock_us') cur.value = 'USD';
+  else cur.value = 'THB';
+  updateInvPriceLabel();
+}
+function updateInvPriceLabel(){
+  const cur = document.getElementById('inv-currency').value;
+  document.getElementById('inv-price-label').textContent = 'ราคาทุนเฉลี่ย ('+cur+')';
+}
+
+function openInvestModal(idx){
+  editInvIdx = idx;
+  if(idx !== null && data.investData[idx]){
+    const it = data.investData[idx];
+    document.getElementById('modal-inv-title').textContent = 'แก้ไข ' + (it.name||it.symbol);
+    document.getElementById('inv-type').value = it.type;
+    document.getElementById('inv-symbol').value = it.symbol;
+    document.getElementById('inv-name').value = it.name;
+    document.getElementById('inv-qty').value = it.qty || '';
+    document.getElementById('inv-price').value = it.avgPrice || '';
+    document.getElementById('inv-currency').value = it.currency || 'THB';
+    document.getElementById('inv-note').value = it.note || '';
+    document.getElementById('btn-del-inv').style.display = 'block';
+  } else {
+    document.getElementById('modal-inv-title').textContent = 'เพิ่มสินทรัพย์';
+    document.getElementById('inv-type').value = 'crypto';
+    document.getElementById('inv-symbol').value = '';
+    document.getElementById('inv-name').value = '';
+    document.getElementById('inv-qty').value = '';
+    document.getElementById('inv-price').value = '';
+    document.getElementById('inv-currency').value = 'THB';
+    document.getElementById('inv-note').value = '';
+    document.getElementById('btn-del-inv').style.display = 'none';
+  }
+  updateInvPriceLabel();
+  document.getElementById('inv-currency').onchange = updateInvPriceLabel;
+  openModal('modal-invest');
+}
+
+function saveInvest(){
+  const type = document.getElementById('inv-type').value;
+  const symbol = document.getElementById('inv-symbol').value.trim();
+  const name = document.getElementById('inv-name').value.trim() || symbol;
+  const qty = parseFloat(document.getElementById('inv-qty').value) || 0;
+  const avgPrice = parseFloat(document.getElementById('inv-price').value) || 0;
+  const currency = document.getElementById('inv-currency').value;
+  const note = document.getElementById('inv-note').value.trim();
+  if(!symbol){ toast('❌ กรุณาใส่ symbol'); return; }
+  if(!data.investData) data.investData = [];
+  const obj = {type,symbol,name,qty,avgPrice,currency,note};
+  if(editInvIdx !== null){
+    obj.id = data.investData[editInvIdx].id;
+    data.investData[editInvIdx] = obj;
+  } else {
+    obj.id = 'inv_' + Date.now();
+    data.investData.push(obj);
+  }
+  saveData();
+  closeModal('modal-invest');
+  renderInvestTab();
+  toast('✅ บันทึกสำเร็จ');
+  fetchPrices(true);
+}
+
+function confirmDeleteInvest(){
+  showConfirm('ลบสินทรัพย์','ต้องการลบรายการนี้ใช่ไหม?',()=>{
+    if(editInvIdx === null) return;
+    data.investData.splice(editInvIdx,1);
+    saveData();
+    closeModal('modal-invest');
+    renderInvestTab();
+    toast('🗑 ลบแล้ว');
+  });
+}
+
+async function fetchPrices(silent){
+  const holdings = data.investData || [];
+  if(!holdings.length){ if(!silent) toast('⚠ ยังไม่มีสินทรัพย์'); return; }
+  const btn = document.getElementById('btn-refresh');
+  if(!silent && btn){
+    btn.disabled = true;
+    const sv = btn.querySelector('svg'); if(sv) sv.classList.add('spin');
+  }
+  try{
+    const cryptoIds = new Set();
+    const stocks = new Set();
+    holdings.forEach(h=>{
+      if(h.type==='crypto'||h.type==='gold') cryptoIds.add(h.symbol);
+      else if(h.type==='stock_us'||h.type==='stock_th') stocks.add(h.symbol);
+    });
+    cryptoIds.add('tether'); // for USD/THB rate
+    if(!data.priceCache) data.priceCache = {};
+
+    // Fetch crypto from CoinGecko
+    if(cryptoIds.size){
+      try{
+        const url = 'https://api.coingecko.com/api/v3/simple/price?ids='+[...cryptoIds].join(',')+'&vs_currencies=thb,usd';
+        const r = await fetch(url);
+        const d = await r.json();
+        for(const id in d){
+          data.priceCache[id] = {thb:d[id].thb, usd:d[id].usd, t:Date.now()};
+        }
+        if(d.tether && d.tether.thb) data.usdThbRate = d.tether.thb;
+      }catch(e){ console.warn('crypto fail',e); }
+    }
+
+    // Fetch stocks via CORS proxy → Yahoo Finance
+    const rate = data.usdThbRate || 36;
+    const stockProms = [...stocks].map(async sym=>{
+      try{
+        const yUrl = 'https://query1.finance.yahoo.com/v8/finance/chart/'+encodeURIComponent(sym);
+        const url = 'https://corsproxy.io/?'+encodeURIComponent(yUrl);
+        const r = await fetch(url);
+        const d = await r.json();
+        const meta = d && d.chart && d.chart.result && d.chart.result[0] && d.chart.result[0].meta;
+        if(!meta) throw new Error('no meta');
+        const priceNative = meta.regularMarketPrice;
+        const cur = meta.currency || 'USD';
+        const thb = cur === 'USD' ? priceNative * rate : priceNative;
+        const usd = cur === 'USD' ? priceNative : priceNative / rate;
+        data.priceCache[sym] = {thb, usd, native:priceNative, cur, t:Date.now()};
+      }catch(e){ console.warn('stock fail',sym,e); }
+    });
+    await Promise.all(stockProms);
+
+    saveData();
+    if(curTab === 'invest') renderInvestTab();
+    if(!silent) toast('✅ อัปเดตราคาแล้ว');
+  } catch(e){
+    if(!silent) toast('❌ อัปเดตไม่สำเร็จ');
+  } finally {
+    if(!silent && btn){
+      btn.disabled = false;
+      const sv = btn.querySelector('svg'); if(sv) sv.classList.remove('spin');
+    }
+  }
+}
+
+loadData();
+renderAll();
+// Auto-fetch prices in background on load
+setTimeout(()=>fetchPrices(true), 800);
 </script>
 </body>
 </html>
